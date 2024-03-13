@@ -51,6 +51,7 @@
 		0C4CA7982BA0F66A0082F8E5 /* CardVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7972BA0F66A0082F8E5 /* CardVM.swift */; };
 		0C4CA79A2BA0F69F0082F8E5 /* AddPassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7992BA0F69F0082F8E5 /* AddPassView.swift */; };
 		6AAABA842BA206A000B5553F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAABA832BA206A000B5553F /* ImagePicker.swift */; };
+		6AAABA8C2BA2281300B5553F /* EOBTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAABA8B2BA2281300B5553F /* EOBTableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		0C4CA7992BA0F69F0082F8E5 /* AddPassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPassView.swift; sourceTree = "<group>"; };
 		0C7B5A452BA1FB3300DA790C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		6AAABA832BA206A000B5553F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		6AAABA8B2BA2281300B5553F /* EOBTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EOBTableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +235,7 @@
 				0C4CA7932BA0F5080082F8E5 /* CommunicationsTable.swift */,
 				0C4CA7952BA0F6060082F8E5 /* CommunicationsDetailView.swift */,
 				0C4CA7992BA0F69F0082F8E5 /* AddPassView.swift */,
+				6AAABA8B2BA2281300B5553F /* EOBTableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				0C4CA75A2BA0EA310082F8E5 /* UserService.swift in Sources */,
 				0C4CA7822BA0F1CF0082F8E5 /* EditProviderView.swift in Sources */,
 				0C4CA78A2BA0F3A30082F8E5 /* CardView.swift in Sources */,
+				6AAABA8C2BA2281300B5553F /* EOBTableView.swift in Sources */,
 				0C4CA7682BA0ED3A0082F8E5 /* HomeView.swift in Sources */,
 				0C4CA7702BA0EF770082F8E5 /* PageHeading.swift in Sources */,
 				0C4CA7622BA0EC6A0082F8E5 /* LoggedOutHeader.swift in Sources */,
