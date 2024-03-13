@@ -7,13 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C4CA7252BA0E94A0082F8E5 /* TemplateAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7242BA0E94A0082F8E5 /* TemplateAppApp.swift */; };
-		0C4CA7272BA0E94A0082F8E5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7262BA0E94A0082F8E5 /* ContentView.swift */; };
+		0C4CA7252BA0E94A0082F8E5 /* TemplateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7242BA0E94A0082F8E5 /* TemplateApp.swift */; };
 		0C4CA7292BA0E94B0082F8E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C4CA7282BA0E94B0082F8E5 /* Assets.xcassets */; };
 		0C4CA72C2BA0E94B0082F8E5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C4CA72B2BA0E94B0082F8E5 /* Preview Assets.xcassets */; };
 		0C4CA7362BA0E94B0082F8E5 /* TemplateAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7352BA0E94B0082F8E5 /* TemplateAppTests.swift */; };
 		0C4CA7402BA0E94B0082F8E5 /* TemplateAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA73F2BA0E94B0082F8E5 /* TemplateAppUITests.swift */; };
 		0C4CA7422BA0E94B0082F8E5 /* TemplateAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7412BA0E94B0082F8E5 /* TemplateAppUITestsLaunchTests.swift */; };
+		0C4CA7522BA0E98C0082F8E5 /* AppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7512BA0E98C0082F8E5 /* AppService.swift */; };
+		0C4CA7542BA0E9CA0082F8E5 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7532BA0E9CA0082F8E5 /* LoginView.swift */; };
+		0C4CA7562BA0E9E00082F8E5 /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7552BA0E9E00082F8E5 /* LoginVM.swift */; };
+		0C4CA7582BA0EA0E0082F8E5 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7572BA0EA0E0082F8E5 /* KeychainManager.swift */; };
+		0C4CA75A2BA0EA310082F8E5 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7592BA0EA310082F8E5 /* UserService.swift */; };
+		0C4CA75C2BA0EB4E0082F8E5 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA75B2BA0EB4E0082F8E5 /* UserModel.swift */; };
+		0C4CA75E2BA0EB5E0082F8E5 /* StateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA75D2BA0EB5E0082F8E5 /* StateModel.swift */; };
+		0C4CA7602BA0EB6C0082F8E5 /* PatientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA75F2BA0EB6C0082F8E5 /* PatientModel.swift */; };
+		0C4CA7622BA0EC6A0082F8E5 /* LoggedOutHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7612BA0EC6A0082F8E5 /* LoggedOutHeader.swift */; };
+		0C4CA7642BA0ECF10082F8E5 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7632BA0ECF10082F8E5 /* RegisterView.swift */; };
+		0C4CA7662BA0ED160082F8E5 /* RegisterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7652BA0ED160082F8E5 /* RegisterVM.swift */; };
+		0C4CA7682BA0ED3A0082F8E5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7672BA0ED3A0082F8E5 /* HomeView.swift */; };
+		0C4CA76A2BA0ED6B0082F8E5 /* HomeVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7692BA0ED6B0082F8E5 /* HomeVM.swift */; };
+		0C4CA76C2BA0EF420082F8E5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA76B2BA0EF420082F8E5 /* ProfileView.swift */; };
+		0C4CA76E2BA0EF530082F8E5 /* ProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA76D2BA0EF530082F8E5 /* ProfileVM.swift */; };
+		0C4CA7702BA0EF770082F8E5 /* PageHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA76F2BA0EF770082F8E5 /* PageHeading.swift */; };
+		0C4CA7722BA0EF9A0082F8E5 /* PatientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7712BA0EF9A0082F8E5 /* PatientView.swift */; };
+		0C4CA7742BA0EFA10082F8E5 /* ProviderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7732BA0EFA10082F8E5 /* ProviderView.swift */; };
+		0C4CA7762BA0F0250082F8E5 /* PatientVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7752BA0F0250082F8E5 /* PatientVM.swift */; };
+		0C4CA7782BA0F0450082F8E5 /* WideCustomRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7772BA0F0450082F8E5 /* WideCustomRow.swift */; };
+		0C4CA77A2BA0F0720082F8E5 /* EditPatientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7792BA0F0720082F8E5 /* EditPatientView.swift */; };
+		0C4CA77C2BA0F0890082F8E5 /* EditPatientVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA77B2BA0F0890082F8E5 /* EditPatientVM.swift */; };
+		0C4CA77E2BA0F1800082F8E5 /* ProviderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA77D2BA0F1800082F8E5 /* ProviderVM.swift */; };
+		0C4CA7802BA0F1C40082F8E5 /* EditCareCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA77F2BA0F1C40082F8E5 /* EditCareCenterView.swift */; };
+		0C4CA7822BA0F1CF0082F8E5 /* EditProviderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7812BA0F1CF0082F8E5 /* EditProviderView.swift */; };
+		0C4CA7842BA0F1FF0082F8E5 /* EditCareCenterVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7832BA0F1FF0082F8E5 /* EditCareCenterVM.swift */; };
+		0C4CA7862BA0F2140082F8E5 /* EditProviderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7852BA0F2140082F8E5 /* EditProviderVM.swift */; };
+		0C4CA7882BA0F3920082F8E5 /* EOBView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7872BA0F3920082F8E5 /* EOBView.swift */; };
+		0C4CA78A2BA0F3A30082F8E5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7892BA0F3A30082F8E5 /* CardView.swift */; };
+		0C4CA78C2BA0F3AF0082F8E5 /* RepaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA78B2BA0F3AF0082F8E5 /* RepaymentView.swift */; };
+		0C4CA78E2BA0F3BB0082F8E5 /* CommunicationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA78D2BA0F3BB0082F8E5 /* CommunicationsView.swift */; };
+		0C4CA7902BA0F4730082F8E5 /* RepaymentTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA78F2BA0F4730082F8E5 /* RepaymentTable.swift */; };
+		0C4CA7922BA0F48C0082F8E5 /* RepaymentDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7912BA0F48C0082F8E5 /* RepaymentDetailsView.swift */; };
+		0C4CA7942BA0F5080082F8E5 /* CommunicationsTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7932BA0F5080082F8E5 /* CommunicationsTable.swift */; };
+		0C4CA7962BA0F6060082F8E5 /* CommunicationsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7952BA0F6060082F8E5 /* CommunicationsDetailView.swift */; };
+		0C4CA7982BA0F66A0082F8E5 /* CardVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7972BA0F66A0082F8E5 /* CardVM.swift */; };
+		0C4CA79A2BA0F69F0082F8E5 /* AddPassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7992BA0F69F0082F8E5 /* AddPassView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,8 +71,7 @@
 
 /* Begin PBXFileReference section */
 		0C4CA7212BA0E94A0082F8E5 /* TemplateApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TemplateApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C4CA7242BA0E94A0082F8E5 /* TemplateAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateAppApp.swift; sourceTree = "<group>"; };
-		0C4CA7262BA0E94A0082F8E5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0C4CA7242BA0E94A0082F8E5 /* TemplateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateApp.swift; sourceTree = "<group>"; };
 		0C4CA7282BA0E94B0082F8E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C4CA72B2BA0E94B0082F8E5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0C4CA7312BA0E94B0082F8E5 /* TemplateAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TemplateAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +79,44 @@
 		0C4CA73B2BA0E94B0082F8E5 /* TemplateAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TemplateAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C4CA73F2BA0E94B0082F8E5 /* TemplateAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateAppUITests.swift; sourceTree = "<group>"; };
 		0C4CA7412BA0E94B0082F8E5 /* TemplateAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0C4CA7512BA0E98C0082F8E5 /* AppService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppService.swift; sourceTree = "<group>"; };
+		0C4CA7532BA0E9CA0082F8E5 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		0C4CA7552BA0E9E00082F8E5 /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
+		0C4CA7572BA0EA0E0082F8E5 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		0C4CA7592BA0EA310082F8E5 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		0C4CA75B2BA0EB4E0082F8E5 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		0C4CA75D2BA0EB5E0082F8E5 /* StateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateModel.swift; sourceTree = "<group>"; };
+		0C4CA75F2BA0EB6C0082F8E5 /* PatientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientModel.swift; sourceTree = "<group>"; };
+		0C4CA7612BA0EC6A0082F8E5 /* LoggedOutHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutHeader.swift; sourceTree = "<group>"; };
+		0C4CA7632BA0ECF10082F8E5 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		0C4CA7652BA0ED160082F8E5 /* RegisterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVM.swift; sourceTree = "<group>"; };
+		0C4CA7672BA0ED3A0082F8E5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		0C4CA7692BA0ED6B0082F8E5 /* HomeVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM.swift; sourceTree = "<group>"; };
+		0C4CA76B2BA0EF420082F8E5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		0C4CA76D2BA0EF530082F8E5 /* ProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVM.swift; sourceTree = "<group>"; };
+		0C4CA76F2BA0EF770082F8E5 /* PageHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageHeading.swift; sourceTree = "<group>"; };
+		0C4CA7712BA0EF9A0082F8E5 /* PatientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientView.swift; sourceTree = "<group>"; };
+		0C4CA7732BA0EFA10082F8E5 /* ProviderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderView.swift; sourceTree = "<group>"; };
+		0C4CA7752BA0F0250082F8E5 /* PatientVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientVM.swift; sourceTree = "<group>"; };
+		0C4CA7772BA0F0450082F8E5 /* WideCustomRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WideCustomRow.swift; sourceTree = "<group>"; };
+		0C4CA7792BA0F0720082F8E5 /* EditPatientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPatientView.swift; sourceTree = "<group>"; };
+		0C4CA77B2BA0F0890082F8E5 /* EditPatientVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPatientVM.swift; sourceTree = "<group>"; };
+		0C4CA77D2BA0F1800082F8E5 /* ProviderVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderVM.swift; sourceTree = "<group>"; };
+		0C4CA77F2BA0F1C40082F8E5 /* EditCareCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCareCenterView.swift; sourceTree = "<group>"; };
+		0C4CA7812BA0F1CF0082F8E5 /* EditProviderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProviderView.swift; sourceTree = "<group>"; };
+		0C4CA7832BA0F1FF0082F8E5 /* EditCareCenterVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCareCenterVM.swift; sourceTree = "<group>"; };
+		0C4CA7852BA0F2140082F8E5 /* EditProviderVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProviderVM.swift; sourceTree = "<group>"; };
+		0C4CA7872BA0F3920082F8E5 /* EOBView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EOBView.swift; sourceTree = "<group>"; };
+		0C4CA7892BA0F3A30082F8E5 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		0C4CA78B2BA0F3AF0082F8E5 /* RepaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepaymentView.swift; sourceTree = "<group>"; };
+		0C4CA78D2BA0F3BB0082F8E5 /* CommunicationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationsView.swift; sourceTree = "<group>"; };
+		0C4CA78F2BA0F4730082F8E5 /* RepaymentTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepaymentTable.swift; sourceTree = "<group>"; };
+		0C4CA7912BA0F48C0082F8E5 /* RepaymentDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepaymentDetailsView.swift; sourceTree = "<group>"; };
+		0C4CA7932BA0F5080082F8E5 /* CommunicationsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationsTable.swift; sourceTree = "<group>"; };
+		0C4CA7952BA0F6060082F8E5 /* CommunicationsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationsDetailView.swift; sourceTree = "<group>"; };
+		0C4CA7972BA0F66A0082F8E5 /* CardVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardVM.swift; sourceTree = "<group>"; };
+		0C4CA7992BA0F69F0082F8E5 /* AddPassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPassView.swift; sourceTree = "<group>"; };
+		0C7B5A452BA1FB3300DA790C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +167,16 @@
 		0C4CA7232BA0E94A0082F8E5 /* TemplateApp */ = {
 			isa = PBXGroup;
 			children = (
-				0C4CA7242BA0E94A0082F8E5 /* TemplateAppApp.swift */,
-				0C4CA7262BA0E94A0082F8E5 /* ContentView.swift */,
+				0C7B5A452BA1FB3300DA790C /* Info.plist */,
+				0C4CA7502BA0E97D0082F8E5 /* Models */,
+				0C4CA74F2BA0E9710082F8E5 /* ViewModels */,
+				0C4CA74E2BA0E96A0082F8E5 /* Views */,
+				0C4CA7242BA0E94A0082F8E5 /* TemplateApp.swift */,
 				0C4CA7282BA0E94B0082F8E5 /* Assets.xcassets */,
 				0C4CA72A2BA0E94B0082F8E5 /* Preview Content */,
+				0C4CA7512BA0E98C0082F8E5 /* AppService.swift */,
+				0C4CA7572BA0EA0E0082F8E5 /* KeychainManager.swift */,
+				0C4CA7592BA0EA310082F8E5 /* UserService.swift */,
 			);
 			path = TemplateApp;
 			sourceTree = "<group>";
@@ -125,6 +204,61 @@
 				0C4CA7412BA0E94B0082F8E5 /* TemplateAppUITestsLaunchTests.swift */,
 			);
 			path = TemplateAppUITests;
+			sourceTree = "<group>";
+		};
+		0C4CA74E2BA0E96A0082F8E5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0C4CA7532BA0E9CA0082F8E5 /* LoginView.swift */,
+				0C4CA7612BA0EC6A0082F8E5 /* LoggedOutHeader.swift */,
+				0C4CA7632BA0ECF10082F8E5 /* RegisterView.swift */,
+				0C4CA7672BA0ED3A0082F8E5 /* HomeView.swift */,
+				0C4CA76B2BA0EF420082F8E5 /* ProfileView.swift */,
+				0C4CA76F2BA0EF770082F8E5 /* PageHeading.swift */,
+				0C4CA7712BA0EF9A0082F8E5 /* PatientView.swift */,
+				0C4CA7732BA0EFA10082F8E5 /* ProviderView.swift */,
+				0C4CA7772BA0F0450082F8E5 /* WideCustomRow.swift */,
+				0C4CA7792BA0F0720082F8E5 /* EditPatientView.swift */,
+				0C4CA77F2BA0F1C40082F8E5 /* EditCareCenterView.swift */,
+				0C4CA7812BA0F1CF0082F8E5 /* EditProviderView.swift */,
+				0C4CA7872BA0F3920082F8E5 /* EOBView.swift */,
+				0C4CA7892BA0F3A30082F8E5 /* CardView.swift */,
+				0C4CA78B2BA0F3AF0082F8E5 /* RepaymentView.swift */,
+				0C4CA78D2BA0F3BB0082F8E5 /* CommunicationsView.swift */,
+				0C4CA78F2BA0F4730082F8E5 /* RepaymentTable.swift */,
+				0C4CA7912BA0F48C0082F8E5 /* RepaymentDetailsView.swift */,
+				0C4CA7932BA0F5080082F8E5 /* CommunicationsTable.swift */,
+				0C4CA7952BA0F6060082F8E5 /* CommunicationsDetailView.swift */,
+				0C4CA7992BA0F69F0082F8E5 /* AddPassView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0C4CA74F2BA0E9710082F8E5 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0C4CA7552BA0E9E00082F8E5 /* LoginVM.swift */,
+				0C4CA7652BA0ED160082F8E5 /* RegisterVM.swift */,
+				0C4CA7692BA0ED6B0082F8E5 /* HomeVM.swift */,
+				0C4CA76D2BA0EF530082F8E5 /* ProfileVM.swift */,
+				0C4CA7752BA0F0250082F8E5 /* PatientVM.swift */,
+				0C4CA77B2BA0F0890082F8E5 /* EditPatientVM.swift */,
+				0C4CA77D2BA0F1800082F8E5 /* ProviderVM.swift */,
+				0C4CA7832BA0F1FF0082F8E5 /* EditCareCenterVM.swift */,
+				0C4CA7852BA0F2140082F8E5 /* EditProviderVM.swift */,
+				0C4CA7972BA0F66A0082F8E5 /* CardVM.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		0C4CA7502BA0E97D0082F8E5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0C4CA75B2BA0EB4E0082F8E5 /* UserModel.swift */,
+				0C4CA75D2BA0EB5E0082F8E5 /* StateModel.swift */,
+				0C4CA75F2BA0EB6C0082F8E5 /* PatientModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +391,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C4CA7272BA0E94A0082F8E5 /* ContentView.swift in Sources */,
-				0C4CA7252BA0E94A0082F8E5 /* TemplateAppApp.swift in Sources */,
+				0C4CA7722BA0EF9A0082F8E5 /* PatientView.swift in Sources */,
+				0C4CA77E2BA0F1800082F8E5 /* ProviderVM.swift in Sources */,
+				0C4CA75A2BA0EA310082F8E5 /* UserService.swift in Sources */,
+				0C4CA7822BA0F1CF0082F8E5 /* EditProviderView.swift in Sources */,
+				0C4CA78A2BA0F3A30082F8E5 /* CardView.swift in Sources */,
+				0C4CA7682BA0ED3A0082F8E5 /* HomeView.swift in Sources */,
+				0C4CA7702BA0EF770082F8E5 /* PageHeading.swift in Sources */,
+				0C4CA7622BA0EC6A0082F8E5 /* LoggedOutHeader.swift in Sources */,
+				0C4CA75C2BA0EB4E0082F8E5 /* UserModel.swift in Sources */,
+				0C4CA7582BA0EA0E0082F8E5 /* KeychainManager.swift in Sources */,
+				0C4CA76A2BA0ED6B0082F8E5 /* HomeVM.swift in Sources */,
+				0C4CA75E2BA0EB5E0082F8E5 /* StateModel.swift in Sources */,
+				0C4CA76C2BA0EF420082F8E5 /* ProfileView.swift in Sources */,
+				0C4CA77C2BA0F0890082F8E5 /* EditPatientVM.swift in Sources */,
+				0C4CA77A2BA0F0720082F8E5 /* EditPatientView.swift in Sources */,
+				0C4CA7522BA0E98C0082F8E5 /* AppService.swift in Sources */,
+				0C4CA7662BA0ED160082F8E5 /* RegisterVM.swift in Sources */,
+				0C4CA7742BA0EFA10082F8E5 /* ProviderView.swift in Sources */,
+				0C4CA7902BA0F4730082F8E5 /* RepaymentTable.swift in Sources */,
+				0C4CA7542BA0E9CA0082F8E5 /* LoginView.swift in Sources */,
+				0C4CA7762BA0F0250082F8E5 /* PatientVM.swift in Sources */,
+				0C4CA7252BA0E94A0082F8E5 /* TemplateApp.swift in Sources */,
+				0C4CA7882BA0F3920082F8E5 /* EOBView.swift in Sources */,
+				0C4CA7942BA0F5080082F8E5 /* CommunicationsTable.swift in Sources */,
+				0C4CA7922BA0F48C0082F8E5 /* RepaymentDetailsView.swift in Sources */,
+				0C4CA7642BA0ECF10082F8E5 /* RegisterView.swift in Sources */,
+				0C4CA78E2BA0F3BB0082F8E5 /* CommunicationsView.swift in Sources */,
+				0C4CA7802BA0F1C40082F8E5 /* EditCareCenterView.swift in Sources */,
+				0C4CA7562BA0E9E00082F8E5 /* LoginVM.swift in Sources */,
+				0C4CA76E2BA0EF530082F8E5 /* ProfileVM.swift in Sources */,
+				0C4CA7782BA0F0450082F8E5 /* WideCustomRow.swift in Sources */,
+				0C4CA78C2BA0F3AF0082F8E5 /* RepaymentView.swift in Sources */,
+				0C4CA7962BA0F6060082F8E5 /* CommunicationsDetailView.swift in Sources */,
+				0C4CA7982BA0F66A0082F8E5 /* CardVM.swift in Sources */,
+				0C4CA7842BA0F1FF0082F8E5 /* EditCareCenterVM.swift in Sources */,
+				0C4CA79A2BA0F69F0082F8E5 /* AddPassView.swift in Sources */,
+				0C4CA7602BA0EB6C0082F8E5 /* PatientModel.swift in Sources */,
+				0C4CA7862BA0F2140082F8E5 /* EditProviderVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,11 +595,13 @@
 				DEVELOPMENT_TEAM = 4BL85T5K7C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TemplateApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Template App";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -437,9 +609,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Netswitch.TemplateApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -454,11 +630,13 @@
 				DEVELOPMENT_TEAM = 4BL85T5K7C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TemplateApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Template App";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -466,9 +644,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Netswitch.TemplateApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
