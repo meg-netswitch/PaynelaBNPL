@@ -12,6 +12,7 @@ class AppService {
     
     let companyName: String = "App Name"
     let companySlogan: String = "Company Slogan"
+    let backgroundLight: Bool = true
     
     private init() {
         

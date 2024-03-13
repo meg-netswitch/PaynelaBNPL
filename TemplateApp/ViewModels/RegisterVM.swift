@@ -14,6 +14,8 @@ class RegisterVM: ObservableObject {
     @Published var ssn = ""
     @Published var selectedDate = Date()
     
+    let appModel = AppService.shared
+    
 
     func register(firstname: String, lastname: String, selectedDate: Date, ssn: String){
         

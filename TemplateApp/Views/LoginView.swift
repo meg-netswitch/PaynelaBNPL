@@ -22,26 +22,26 @@ struct LoginView: View {
                     VStack {
                         
                         TextField("", text: $viewModel.username, prompt: Text("Username")
-                            .foregroundColor(.gray))
+                            .foregroundColor(viewModel.appModel.backgroundLight ? Color.black.opacity(0.5) : Color.white.opacity(0.5)))
                         .padding()
                         .frame(width: 300, height: 50)
-                        .background(Color.white.opacity(0.05))
-                        .foregroundStyle(Color.white)
+                        .background(viewModel.appModel.backgroundLight ? Color.white.opacity(0.1) : Color.black.opacity(0.1))
+                        .foregroundStyle(viewModel.appModel.backgroundLight ? .black : .white)
                         .cornerRadius(5)
                         .textInputAutocapitalization(TextInputAutocapitalization.never)
                         .focused($fieldIsFocused)
                         SecureField("", text: $viewModel.password, prompt: Text("Password")
-                            .foregroundColor(.gray))
+                            .foregroundColor(viewModel.appModel.backgroundLight ? Color.black.opacity(0.5) : Color.white.opacity(0.5)))
                         .padding()
                         .frame(width: 300, height: 50)
-                        .background(Color.white.opacity(0.05))
-                        .foregroundStyle(Color.white)
+                        .background(viewModel.appModel.backgroundLight ? Color.white.opacity(0.1) : Color.black.opacity(0.1))
+                        .foregroundStyle(viewModel.appModel.backgroundLight ? .black : .white)
                         .cornerRadius(5)
                         .textInputAutocapitalization(TextInputAutocapitalization.never)
                         .focused($fieldIsFocused)
                         if(viewModel.loading){
                             ProgressView()
-                                .progressViewStyle(CircularProgressViewStyle(tint: Color.white))
+                                .progressViewStyle(CircularProgressViewStyle(tint: viewModel.appModel.backgroundLight ? Color.black.opacity(0.5) : Color.white.opacity(0.5)))
                                 .padding(15)
                         } else {
                             VStack {
@@ -90,7 +90,7 @@ struct LoginView: View {
                                     VStack {
                                         Toggle(isOn: $viewModel.enableFaceID) {
                                             Text("Enable FaceID")
-                                                .foregroundStyle(Color.white)
+                                                .foregroundStyle(viewModel.appModel.backgroundLight ? .black : .white)
                                         }
                                         .frame(width: 300, height: 50)
                                     }
@@ -102,6 +102,8 @@ struct LoginView: View {
                                         .navigationBarBackButtonHidden(true)
                                 } label: {
                                     Text("Touch here to register")
+                                        .foregroundStyle(viewModel.appModel.backgroundLight ? .black : .white)
+                                        
                                     
                                 }
                                 .padding()

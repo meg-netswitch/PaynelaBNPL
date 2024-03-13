@@ -50,6 +50,7 @@
 		0C4CA7962BA0F6060082F8E5 /* CommunicationsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7952BA0F6060082F8E5 /* CommunicationsDetailView.swift */; };
 		0C4CA7982BA0F66A0082F8E5 /* CardVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7972BA0F66A0082F8E5 /* CardVM.swift */; };
 		0C4CA79A2BA0F69F0082F8E5 /* AddPassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7992BA0F69F0082F8E5 /* AddPassView.swift */; };
+		6AAABA842BA206A000B5553F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAABA832BA206A000B5553F /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,6 +118,7 @@
 		0C4CA7972BA0F66A0082F8E5 /* CardVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardVM.swift; sourceTree = "<group>"; };
 		0C4CA7992BA0F69F0082F8E5 /* AddPassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPassView.swift; sourceTree = "<group>"; };
 		0C7B5A452BA1FB3300DA790C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6AAABA832BA206A000B5553F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 				0C4CA7512BA0E98C0082F8E5 /* AppService.swift */,
 				0C4CA7572BA0EA0E0082F8E5 /* KeychainManager.swift */,
 				0C4CA7592BA0EA310082F8E5 /* UserService.swift */,
+				6AAABA832BA206A000B5553F /* ImagePicker.swift */,
 			);
 			path = TemplateApp;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AAABA842BA206A000B5553F /* ImagePicker.swift in Sources */,
 				0C4CA7722BA0EF9A0082F8E5 /* PatientView.swift in Sources */,
 				0C4CA77E2BA0F1800082F8E5 /* ProviderVM.swift in Sources */,
 				0C4CA75A2BA0EA310082F8E5 /* UserService.swift in Sources */,
@@ -597,6 +601,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TemplateApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Template App";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please Allow Access to Camera";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -632,6 +637,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TemplateApp/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Template App";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please Allow Access to Camera";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

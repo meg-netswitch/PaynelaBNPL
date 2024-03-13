@@ -12,12 +12,12 @@ struct LoggedOutHeader: View {
     var body: some View {
         VStack {
             Image("companyLogo")
-                .padding(.top)
+                .padding(.vertical)
                 .frame(width: 300, height: 100)
             Text("\(appModel.companySlogan)")
                 .font(.title2)
                 .fontWeight(.bold)
-                .foregroundColor(Color.white)
+                .foregroundColor(appModel.backgroundLight ? .black : .white)
                 .multilineTextAlignment(.center)
                 
                 
