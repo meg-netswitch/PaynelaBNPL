@@ -20,89 +20,146 @@ struct EOBView: View {
                 HStack {
                     PageHeading(title: "EOB")
                     Spacer()
+
+                }
+                HStack {
+                    Spacer()
                     if(uploadImageClick){
                         Button {
-                            uploadImageClick = false
+                            withAnimation{
+                                uploadImageClick.toggle()
+                            }
                         } label: {
                             Text("Cancel")
-                                .font(.title2)
-                            .padding(.top, 30)
-                            .padding(.trailing, 15)
+                                .font(.headline)
+                                .padding(.vertical, 10)
                         }
                     } else {
                             Button {
-                                uploadImageClick = true
+                                withAnimation{
+                                    uploadImageClick.toggle()
+                                }
                             } label: {
-                                Text("Upload")
-                                    .font(.title2)
-                                .padding(.top, 30)
-                                .padding(.trailing, 15)
+                                Text("Upload EOB")
+                                .font(.headline)
+                                .padding(.vertical, 10)
+                                
                             }
                         }
+                    
+                }
+                .padding(.horizontal)
+               ScrollView {
+                if(uploadImageClick){
+                    VStack {
+                        HStack {
+                            Spacer()
+                            Button {
+                                uploadImage = true
+                                
+                            } label: {
+                                if (!uploadImage && !uploadFromCamera) {
+                                    VStack {
+                                        Image(systemName: "photo")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .foregroundStyle(.black)
+                                            .frame(height: 20)
+                                        Text("Photo Library")
+                                            .fontWeight(.semibold)
+                                            .font(.caption)
+                                            .foregroundStyle(.black)
+                                        
+                                    }
+                                    .frame(width: 100, height: 60)
+                                    .background(.white)
+                                    .cornerRadius(5)
+                                }
+                                
+                            }
+                            Button {
+                                uploadFromCamera = true
+                                
+                            } label: {
+                                if (!uploadImage && !uploadFromCamera) {
+                                    VStack {
+                                        Image(systemName: "camera")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .foregroundStyle(.black)
+                                            .frame(height: 20)
+                                        Text("Camera")
+                                            .fontWeight(.semibold)
+                                            .font(.caption)
+                                            .foregroundStyle(.black)
+                                        
+                                    }
+                                    .frame(width: 100, height: 60)
+                                    .background(.white)
+                                    .cornerRadius(5)
+                                }
+                                
+                            }
+                            Spacer()
+                        }
+                        .padding()
+                        if(imageSelected.size != CGSize(width: 0, height: 0)){
+                            VStack {
+                                Image(uiImage: imageSelected)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .padding()
+                                Button {
+                                    
+                                } label: {
+                                    Text("Submit")
+                                        .fontWeight(.semibold)
+                                        .font(.caption)
+                                        .padding(.vertical, 10)
+                                        .padding(.horizontal)
+                                        .background(.white)
+                                        .foregroundStyle(.black)
+                                        .cornerRadius(5)
+                                }
+                                
+                            }
+                            .padding(.bottom)
+                        }
+                        
+                    }
+                    .animation(.spring)
+                    .background(Color.lightGray)
+                    .cornerRadius(5)
+                    .padding()
                     
                 }
                 
-                if(uploadImageClick){
-                    HStack {
+                
+                    VStack {
+                        HStack {
+                            Text("Date")
+                                .multilineTextAlignment(.leading)
+                                .frame(width: 100)
+                                .padding(.leading, 5)
+                                .foregroundStyle(Color.black)
+                            Text("File Name")
+                                .multilineTextAlignment(.leading)
+                                .frame(width: 100)
+                                .padding(.leading, 5)
+                                .foregroundStyle(Color.black)
+                            Text("Status")
+                                .multilineTextAlignment(.leading)
+                                .frame(width: 100)
+                                .padding(.leading, 5)
+                                .foregroundStyle(Color.black)
+                            Spacer()
+                        }
+                        .padding()
+                        .padding(.top, 10)
+                        .background(.white)
+                        EOBTableView()
                         
-                        Button {
-                            uploadImage = true
-                            
-                        } label: {
-                            if (!uploadImage && !uploadFromCamera) {
-                                VStack {
-                                    Image(systemName: "photo")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .foregroundStyle(.black)
-                                        .frame(height: 30)
-                                    Text("Photo Library")
-                                        .fontWeight(.semibold)
-                                        .font(.caption)
-                                        .foregroundStyle(.black)
-                                    
-                                }
-                                .frame(width: 100, height: 80)
-                                .background(Color.lightGray)
-                                .cornerRadius(5)
-                            }
-                            
-                        }
-                        Button {
-                            uploadFromCamera = true
-                            
-                        } label: {
-                            if (!uploadImage && !uploadFromCamera) {
-                                VStack {
-                                    Image(systemName: "camera")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .foregroundStyle(.black)
-                                        .frame(height: 30)
-                                    Text("Camera")
-                                        .fontWeight(.semibold)
-                                        .font(.caption)
-                                        .foregroundStyle(.black)
-                                    
-                                }
-                                .frame(width: 100, height: 80)
-                                .background(Color.lightGray)
-                                .cornerRadius(5)
-                            }
-                            
-                        }
                     }
-                }
-                /*
-                Image(uiImage: imageSelected)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .padding()
-                 */
-                ScrollView {
-                    EOBTableView()
-                  
-                    
                 }
             }
             

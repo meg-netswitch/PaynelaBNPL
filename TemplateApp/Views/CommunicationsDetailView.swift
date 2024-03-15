@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CommunicationsDetailView: View {
-    let communicationsDetail: CommunicationsData
+    let communicationsDetail: Communication
     var body: some View {
        ScrollView {
             HStack{
@@ -31,5 +31,5 @@ struct CommunicationsDetailView: View {
 }
 
 #Preview {
-    CommunicationsDetailView(communicationsDetail: CommunicationsData(communication_id: 1, date: "02/10/24", subject: "Welcome Message", type: "Email: smith@company.com"))
+    CommunicationsDetailView(communicationsDetail: Communication(communication_id: 1, date: "02/10/24", subject: "Welcome Message", type: "Email: smith@company.com"))
 }

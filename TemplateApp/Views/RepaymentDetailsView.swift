@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RepaymentDetailsView: View {
-    let repaymentDetail: RepaymentData
+    let repaymentDetail: Repayment
 
     var body: some View {
         VStack {
@@ -30,5 +30,5 @@ struct RepaymentDetailsView: View {
 }
 
 #Preview {
-    RepaymentDetailsView(repaymentDetail: RepaymentData(repayment_id: 1, date: "02/10/24", amount: "200", status: "Accepted", balance: "1800"))
+    RepaymentDetailsView(repaymentDetail: Repayment(repayment_id: 1, date: "02/10/24", amount: "200", status: "Accepted", balance: "1800"))
 }
