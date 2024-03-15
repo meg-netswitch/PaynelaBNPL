@@ -13,6 +13,18 @@ struct WideCustomRow: View {
     
     var body: some View {
         HStack {
+            VStack(alignment: .leading){
+                Text("\(title)")
+                    .foregroundStyle(.gray)
+                    
+                Text("\(value)")
+                    .bold()
+                 
+            }
+           
+        }
+        /*
+        HStack {
             HStack {
                 Text("\(title)")
                     .multilineTextAlignment(.leading)
@@ -31,7 +43,7 @@ struct WideCustomRow: View {
             .frame(width: 150.0)
            
         }
-
+*/
     }
 }
 

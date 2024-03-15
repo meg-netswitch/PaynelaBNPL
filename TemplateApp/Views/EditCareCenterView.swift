@@ -19,6 +19,7 @@ struct EditCareCenterView: View {
                     HStack {
                     Spacer()
                     Button {
+                        viewModel.updateCareCenter()
                         dismiss()
                     } label: {
                         Text("save")
@@ -30,7 +31,7 @@ struct EditCareCenterView: View {
                     TextField("Address", text: $viewModel.address)
                     TextField("City", text: $viewModel.city)
                     Picker("State", selection: $viewModel.state) {
-                        ForEach(viewModel.statesArr, id: \.abbr){ item in
+                        ForEach(viewModel.appModel.statesArr, id: \.abbr){ item in
                             Text("\(item.name)").tag("\(item.abbr)")
                         }
                     }
@@ -42,7 +43,7 @@ struct EditCareCenterView: View {
                 }
             }
         }
-        .background(Color.companyColor2)
+        .background(.white)
     }
 }
 

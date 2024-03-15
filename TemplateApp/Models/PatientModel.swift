@@ -41,13 +41,6 @@ struct PatientName: Codable {
     var last: String
 }
 
-struct Address: Codable {
-    var address_1: String
-    var address_2: String
-    var city: String
-    var state: String
-    var zip: String
-}
 
 struct Phone: Codable {
     var fax: String

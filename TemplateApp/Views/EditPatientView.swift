@@ -9,8 +9,8 @@ import SwiftUI
 
 struct EditPatientView: View {
     @StateObject private var viewModel = EditPatientVM()
-    @State private var firstname = ""
     @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         VStack {
             PageHeading(title: "Edit Profile")
@@ -19,7 +19,9 @@ struct EditPatientView: View {
                     HStack {
                     Spacer()
                     Button {
+                        viewModel.updatePatient()
                         dismiss()
+                        
                     } label: {
                         Text("save")
                             .padding(.vertical)
@@ -31,7 +33,7 @@ struct EditPatientView: View {
                     TextField("Address", text: $viewModel.address)
                     TextField("City", text: $viewModel.city)
                     Picker("State", selection: $viewModel.state) {
-                        ForEach(viewModel.statesArr, id: \.abbr){ item in
+                        ForEach(viewModel.appModel.statesArr, id: \.abbr){ item in
                             Text("\(item.name)").tag("\(item.abbr)")
                         }
                     }
@@ -42,8 +44,12 @@ struct EditPatientView: View {
                     TextField("Email", text: $viewModel.email)
                 }
             }
+            
         }
-        .background(Color.companyColor2)
+        .alert(isPresented: $viewModel.updateErr, content: {
+            Alert(title: Text("Error updating profile information"))
+        })
+        .background(.white)
 
     }
 }
