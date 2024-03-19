@@ -11,4 +11,6 @@ struct EOB: Codable {
     var eob_id: Int
     var file_name: String
     var date: String
+    var status: String
 }
+

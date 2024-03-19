@@ -62,6 +62,7 @@
 		6A38D51A2BA48392004852D0 /* AddressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A38D5192BA48392004852D0 /* AddressModel.swift */; };
 		6A38D51C2BA485DE004852D0 /* CommunicationsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A38D51B2BA485DE004852D0 /* CommunicationsService.swift */; };
 		6A38D51E2BA485ED004852D0 /* RepaymentsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A38D51D2BA485ED004852D0 /* RepaymentsService.swift */; };
+		6A74A4E72BAA314F00FA33BD /* EOBUploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A74A4E62BAA314F00FA33BD /* EOBUploadView.swift */; };
 		6AAABA842BA206A000B5553F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAABA832BA206A000B5553F /* ImagePicker.swift */; };
 		6AAABA8C2BA2281300B5553F /* EOBTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAABA8B2BA2281300B5553F /* EOBTableView.swift */; };
 		6AEEBE5D2BA743A70054ECDA /* UploadImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AEEBE5C2BA743A70054ECDA /* UploadImageView.swift */; };
@@ -144,6 +145,7 @@
 		6A38D5192BA48392004852D0 /* AddressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressModel.swift; sourceTree = "<group>"; };
 		6A38D51B2BA485DE004852D0 /* CommunicationsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationsService.swift; sourceTree = "<group>"; };
 		6A38D51D2BA485ED004852D0 /* RepaymentsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepaymentsService.swift; sourceTree = "<group>"; };
+		6A74A4E62BAA314F00FA33BD /* EOBUploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EOBUploadView.swift; sourceTree = "<group>"; };
 		6AAABA832BA206A000B5553F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		6AAABA8B2BA2281300B5553F /* EOBTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EOBTableView.swift; sourceTree = "<group>"; };
 		6AEEBE5C2BA743A70054ECDA /* UploadImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadImageView.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				0C4CA7992BA0F69F0082F8E5 /* AddPassView.swift */,
 				6AAABA8B2BA2281300B5553F /* EOBTableView.swift */,
 				6AEEBE5C2BA743A70054ECDA /* UploadImageView.swift */,
+				6A74A4E62BAA314F00FA33BD /* EOBUploadView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				6A38D51A2BA48392004852D0 /* AddressModel.swift in Sources */,
 				0C4CA7802BA0F1C40082F8E5 /* EditCareCenterView.swift in Sources */,
 				0C4CA7562BA0E9E00082F8E5 /* LoginVM.swift in Sources */,
+				6A74A4E72BAA314F00FA33BD /* EOBUploadView.swift in Sources */,
 				0C4CA76E2BA0EF530082F8E5 /* ProfileVM.swift in Sources */,
 				0C4CA7782BA0F0450082F8E5 /* WideCustomRow.swift in Sources */,
 				0C4CA78C2BA0F3AF0082F8E5 /* RepaymentView.swift in Sources */,

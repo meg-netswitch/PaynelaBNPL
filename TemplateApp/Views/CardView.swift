@@ -26,8 +26,8 @@ struct CardView: View {
                 Text("Transactions")
                     .foregroundColor(.white)
                     .frame(width: 150, height: 50)
-                    .background(Color.companyColor1)
-                    .cornerRadius(10)
+                    .background(Color.companyButton1)
+                    .cornerRadius(5)
             }
             Spacer()
             AddPassToWalletButton {

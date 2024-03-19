@@ -22,7 +22,12 @@ struct EOBTableView: View {
                             .foregroundStyle(Color.black)
                         Text("\(item.file_name)")
                             .multilineTextAlignment(.leading)
-                            .frame(width: 80)
+                            .frame(width: 120)
+                            .padding(.leading, 5)
+                            .foregroundStyle(Color.black)
+                        Text("\(item.status)")
+                            .multilineTextAlignment(.leading)
+                            .frame(width: 130)
                             .padding(.leading, 5)
                             .foregroundStyle(Color.black)
                        
