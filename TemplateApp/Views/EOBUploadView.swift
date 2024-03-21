@@ -19,7 +19,6 @@ struct EOBUploadView: View {
     var body: some View {
         
         VStack {
-            
             if(!uploadFromPhotos && !uploadFromCamera){
                 HStack {
                     PhotosPicker(selection: $viewModel.selectedItems,
@@ -81,21 +80,27 @@ struct EOBUploadView: View {
                 }
             }
             ScrollView {
-                if(uploadFromPhotos){
+                if(uploadFromPhotos && !viewModel.images.isEmpty){
                     ForEach(viewModel.images, id:\.cgImage){ image in
                         Image(uiImage: image)
                             .resizable()
                             .scaledToFit()
                             .frame(width: 250, height: 250)
                     }
-                    Button {
-                        viewModel.submitPhotos(type: "photos")
-                    } label: {
-                        Text("Submit")
+                    if(viewModel.submissionLoading){
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle(tint:  Color.black.opacity(0.5)))
+                            .padding(15)
+                    } else {
+                        Button {
+                            viewModel.submitPhotos(type: "photos")
+                        } label: {
+                            Text("Submit")
+                        }
                     }
                     Spacer()
                 }
-                if(uploadFromCamera){
+                if(uploadFromCamera && !viewModel.cameraImages.isEmpty){
                         ForEach(viewModel.cameraImages, id: \.cgImage ) { item in
                             Image(uiImage: item)
                                 .resizable()
@@ -113,14 +118,20 @@ struct EOBUploadView: View {
                                 .background(Color.black)
                                 .cornerRadius(5)
                         }
-                    Button {
-                        viewModel.submitPhotos(type: "camera")
-                    } label: {
-                        Text("Submit")
-                            .foregroundColor(.white)
-                            .frame(width: 150, height: 50)
-                            .background(Color.companyButton1)
-                            .cornerRadius(5)
+                    if(viewModel.submissionLoading){
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle(tint:  Color.black.opacity(0.5)))
+                            .padding(15)
+                    } else {
+                        Button {
+                            viewModel.submitPhotos(type: "camera")
+                        } label: {
+                            Text("Submit")
+                                .foregroundColor(.white)
+                                .frame(width: 150, height: 50)
+                                .background(Color.companyButton1)
+                                .cornerRadius(5)
+                        }
                     }
                     }
             }

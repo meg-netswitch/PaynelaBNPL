@@ -47,12 +47,8 @@ struct CardView: View {
             Spacer()
         }
         .sheet(isPresented: self.$passSheetVisible) {
-            if(viewModel.pass != nil) {
-                AddPassView(pass: viewModel.pass)
-            } else {
-                EmptyView()
-            }
-            
+            AddPassView(pass: viewModel.passModel.pass)
+
         }
         
             
