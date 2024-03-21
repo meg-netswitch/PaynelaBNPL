@@ -1,5 +1,5 @@
 //
-//  RepaymentView.swift
+//  TransactionView.swift
 //  TemplateApp
 //
 //  Created by Meghan Granit on 3/12/24.
@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct RepaymentView: View {
+struct TransactionView: View {
     var body: some View {
             VStack {
                 HStack{
-                    PageHeading(title: "Repayments")
+                    PageHeading(title: "Transactions")
                     Spacer()
                 }
                 HStack {
@@ -42,7 +42,7 @@ struct RepaymentView: View {
                 }
                 .padding(.leading, 20)
                 .padding(.top, 10)
-                RepaymentTable()
+                TransactionTable()
             }
             
     }
@@ -50,5 +50,5 @@ struct RepaymentView: View {
 }
 
 #Preview {
-    RepaymentView()
+    TransactionView()
 }

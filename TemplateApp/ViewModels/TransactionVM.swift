@@ -6,13 +6,13 @@
 //
 
 import Foundation
-class RepaymentsVM: ObservableObject {
+class TransactionsVM: ObservableObject {
     
-    let repaymentModel = RepaymentsService.shared
+    let transactionModel = TransactionsService.shared
     let userModel = UserService.shared
     
     init(){
-        repaymentModel.getAllRepayments(patient_id: userModel.currentUserID){(result, repayment) in
+        transactionModel.getAllTransactions(patient_id: userModel.currentUserID){(result, transaction) in
             if result {
                 //self.currentPatient = patient
             }

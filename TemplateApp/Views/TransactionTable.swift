@@ -7,17 +7,16 @@
 
 import SwiftUI
 
-
-struct RepaymentTable: View {
+struct TransactionTable: View {
     
-    @StateObject private var viewModel = RepaymentsVM()
+    @StateObject private var viewModel = TransactionsVM()
     
     var body: some View {
             ScrollView {
-                if(viewModel.repaymentModel.repaymentData != nil){
-                    ForEach(viewModel.repaymentModel.repaymentData!, id: \.repayment_id) { item in
+                if(viewModel.transactionModel.transactionData != nil){
+                    ForEach(viewModel.transactionModel.transactionData!, id: \.transaction_id) { item in
                         NavigationLink {
-                            RepaymentDetailsView(repaymentDetail: item)
+                            TransactionDetailsView(transactionDetail: item)
                         } label: {
                             HStack {
                                 Text(item.date)
@@ -48,7 +47,7 @@ struct RepaymentTable: View {
                             .padding()
                             .padding(.top, 10)
                             .padding(.bottom, 10)
-                            .background(item.repayment_id % 2 == 0 ? Color.white : Color.lightGray)
+                            .background(item.transaction_id % 2 == 0 ? Color.white : Color.lightGray)
                             
                         }
 
@@ -64,7 +63,6 @@ struct RepaymentTable: View {
         
     }
 }
-
 #Preview {
-    RepaymentTable()
+    TransactionTable()
 }

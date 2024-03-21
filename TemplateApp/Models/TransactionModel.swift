@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Repayment {
-    var repayment_id: Int
+struct Transaction {
+    var transaction_id: Int
     var date: String
     var amount: String
     var status: String

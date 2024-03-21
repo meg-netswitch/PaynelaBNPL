@@ -26,10 +26,10 @@ struct HomeView: View {
                         Image(systemName: "creditcard")
                         Text("Card")
                     }.tag(2)
-                RepaymentView()
+                TransactionView()
                     .tabItem {
-                        Image(systemName: "calendar")
-                        Text("Repayment")
+                        Image(systemName: "list.bullet")
+                        Text("Transactions")
                     }.tag(3)
                 CommunicationsView()
                     .tabItem {
@@ -41,10 +41,6 @@ struct HomeView: View {
                         Image(systemName: "doc")
                         Text("EOB")
                     }.tag(5)
-            }
-            .onChange(of: selectedTab) { newValue in
-                print(newValue)
-                print(selectedTab)
             }
             .navigationBarBackButtonHidden(true)
             .toolbar {
