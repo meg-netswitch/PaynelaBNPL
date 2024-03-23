@@ -14,11 +14,12 @@ class UserService {
     var currentUser: User?
     var currentPatient: Patient?
     var currentProvider: Provider?
+    var currentCareCenter: CareCenter?
     
     private init() {
         self.findProvider(provider_id: 0001) { (result, provider)  in
             if result {
-                
+                self.currentProvider = provider
             } else {
                 //err
                 
@@ -26,7 +27,7 @@ class UserService {
         }
         self.findCareCenter(care_center_id: 0001) { (result, careCenter)  in
             if result {
-                
+                self.currentCareCenter = careCenter
             } else {
                 //err
                 

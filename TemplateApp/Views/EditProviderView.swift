@@ -12,8 +12,6 @@ struct EditProviderView: View {
     @State private var firstname = ""
     @Environment(\.dismiss) var dismiss
     var body: some View {
-        VStack {
-            PageHeading(title: "Edit Provider")
             Form {
                 Section(header: Text("Primary"), footer:
                     HStack {
@@ -41,10 +39,10 @@ struct EditProviderView: View {
                     TextField("ZIP", text: $viewModel.zip)
                 }
             }
-        }
-        .background(.white)
+
     }
 }
+
 
 #Preview {
     EditProviderView()

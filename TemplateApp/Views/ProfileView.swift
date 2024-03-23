@@ -13,10 +13,7 @@ struct ProfileView: View {
 
     var body: some View {
         VStack{
-            HStack{
-                PageHeading(title: "Profile")
-                Spacer()
-            }
+            
             
             HStack {
                 Button {

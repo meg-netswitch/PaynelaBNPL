@@ -9,43 +9,50 @@ import SwiftUI
 import PassKit
 
 struct CardView: View {
-    @State private var passSheetVisible = false
+    
     @StateObject private var viewModel = CardVM()
     var body: some View {
         VStack {
             if(viewModel.cardLoaded){
-                Image("card")
-                    .resizable(resizingMode: .stretch)
-                    .aspectRatio(contentMode: .fit)
-                    .padding()
-                Spacer()
-                AddPassToWalletButton {
-                    viewModel.getPass()
-                    self.passSheetVisible = true
-                }
-                .frame(width: 300, height: 50)
-                Spacer()
+                CardLoadedView()
             } else {
-                if(viewModel.cardLoading){
-                    ProgressView()
-                        .progressViewStyle(CircularProgressViewStyle(tint: Color.black.opacity(0.5)))
-                        .padding(15)
-                } else {
-                    Button{
-                        viewModel.downloadPass()
-                    } label: {
-                        Text("Get My Card")
+                ZStack{
+                    CardLoadedView()
+                        .blur(radius: 5)
+                        .disabled(true)
+                    VStack{
+                        Spacer()
+                        Button {
+                            if(!viewModel.cardLoading){
+                                viewModel.downloadPass()
+                            }
+                        } label: {
+                            VStack {
+                                if(viewModel.cardLoading){
+                                    ProgressView()
+                                        .progressViewStyle(CircularProgressViewStyle(tint: Color.black.opacity(0.5)))
+                                } else {
+                                    Image(systemName: "creditcard")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 50)
+                                        .padding()
+                                    Text("Get My Card")
+                                        .bold()
+                                        .font(.title2)
+                                }
+                            }
+                        }
+                        .frame(width: 180, height: 130)
+                        .foregroundStyle(.black)
+                        .background(.white)
+                        .cornerRadius(10)
+                        Spacer()
+                        Spacer()
                     }
+                        
                 }
             }
-            
-            //PageHeading(title: "Card")
-            Spacer()
-            
-        }
-        .sheet(isPresented: self.$passSheetVisible) {
-            AddPassView(pass: viewModel.passModel.pass)
-
         }
         
             

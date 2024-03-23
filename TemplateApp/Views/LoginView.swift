@@ -101,7 +101,7 @@ struct LoginView: View {
                                     RegisterView()
                                         .navigationBarBackButtonHidden(true)
                                 } label: {
-                                    Text("Touch here to register")
+                                    Text("Don't have an account? Register Now")
                                         .foregroundStyle(viewModel.appModel.backgroundLight ? .black : .white)
                                         
                                     
@@ -159,7 +159,6 @@ struct LoginView: View {
     
     
 }
-
 
 #Preview {
     LoginView()

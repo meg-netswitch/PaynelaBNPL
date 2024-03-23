@@ -12,8 +12,6 @@ struct EditCareCenterView: View {
     @State private var firstname = ""
     @Environment(\.dismiss) var dismiss
     var body: some View {
-        VStack {
-            PageHeading(title: "Edit Care Center")
             Form {
                 Section(header: Text("Care Center"), footer:
                     HStack {
@@ -42,10 +40,9 @@ struct EditCareCenterView: View {
                     TextField("Email", text: $viewModel.email)
                 }
             }
-        }
-        .background(.white)
     }
 }
+
 
 #Preview {
     EditCareCenterView()

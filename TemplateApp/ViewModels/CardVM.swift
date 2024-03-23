@@ -16,6 +16,8 @@ class CardVM: ObservableObject {
     @Published var cardLoaded = false
     @Published var cardError = false
     
+    @Published var passSheetVisible = false
+    
     
     let userModel = UserService.shared
     let passModel = PassService.shared

@@ -12,8 +12,6 @@ struct EditPatientView: View {
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
-        VStack {
-            PageHeading(title: "Edit Profile")
             Form {
                 Section(header: Text("Patient Information"), footer:
                     HStack {
@@ -44,14 +42,12 @@ struct EditPatientView: View {
                     TextField("Email", text: $viewModel.email)
                 }
             }
+            .alert(isPresented: $viewModel.updateErr, content: {
+                Alert(title: Text("Error updating profile information"))
+            })
             
         }
-        .alert(isPresented: $viewModel.updateErr, content: {
-            Alert(title: Text("Error updating profile information"))
-        })
-        .background(.white)
-
-    }
+        
 }
 
 #Preview {

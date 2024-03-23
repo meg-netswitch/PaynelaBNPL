@@ -64,6 +64,7 @@
 		6A38D51E2BA485ED004852D0 /* TransactionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A38D51D2BA485ED004852D0 /* TransactionsService.swift */; };
 		6A40103D2BAB2A0000F8B8BA /* PassModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A40103C2BAB2A0000F8B8BA /* PassModel.swift */; };
 		6A74A4E72BAA314F00FA33BD /* EOBUploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A74A4E62BAA314F00FA33BD /* EOBUploadView.swift */; };
+		6A9F30222BAF2D4E00768D88 /* CardLoadedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9F30212BAF2D4E00768D88 /* CardLoadedView.swift */; };
 		6AAABA842BA206A000B5553F /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAABA832BA206A000B5553F /* ImagePicker.swift */; };
 		6AAABA8C2BA2281300B5553F /* EOBTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAABA8B2BA2281300B5553F /* EOBTableView.swift */; };
 		6ACF896C2BAB29A300A079AC /* PassService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ACF896B2BAB29A300A079AC /* PassService.swift */; };
@@ -149,6 +150,7 @@
 		6A38D51D2BA485ED004852D0 /* TransactionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsService.swift; sourceTree = "<group>"; };
 		6A40103C2BAB2A0000F8B8BA /* PassModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassModel.swift; sourceTree = "<group>"; };
 		6A74A4E62BAA314F00FA33BD /* EOBUploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EOBUploadView.swift; sourceTree = "<group>"; };
+		6A9F30212BAF2D4E00768D88 /* CardLoadedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardLoadedView.swift; sourceTree = "<group>"; };
 		6AAABA832BA206A000B5553F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		6AAABA8B2BA2281300B5553F /* EOBTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EOBTableView.swift; sourceTree = "<group>"; };
 		6ACF896B2BAB29A300A079AC /* PassService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassService.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				6AAABA8B2BA2281300B5553F /* EOBTableView.swift */,
 				6AEEBE5C2BA743A70054ECDA /* UploadImageView.swift */,
 				6A74A4E62BAA314F00FA33BD /* EOBUploadView.swift */,
+				6A9F30212BAF2D4E00768D88 /* CardLoadedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				0C4CA7622BA0EC6A0082F8E5 /* LoggedOutHeader.swift in Sources */,
 				0C4CA75C2BA0EB4E0082F8E5 /* UserModel.swift in Sources */,
 				0C4CA7582BA0EA0E0082F8E5 /* KeychainManager.swift in Sources */,
+				6A9F30222BAF2D4E00768D88 /* CardLoadedView.swift in Sources */,
 				0C4CA76A2BA0ED6B0082F8E5 /* HomeVM.swift in Sources */,
 				6A38D51E2BA485ED004852D0 /* TransactionsService.swift in Sources */,
 				0C4CA75E2BA0EB5E0082F8E5 /* StateModel.swift in Sources */,
