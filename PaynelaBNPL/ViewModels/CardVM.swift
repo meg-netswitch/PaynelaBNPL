@@ -18,7 +18,7 @@ class CardVM: ObservableObject {
     
     @Published var passSheetVisible = false
     
-    
+    let appModel = AppService.shared
     let userModel = UserService.shared
     let passModel = PassService.shared
 
@@ -32,7 +32,7 @@ class CardVM: ObservableObject {
         var request = URLRequest(url: urlTest!)
         request.setValue("S9oITeHHGe88Lnfzwzant8JUIrKir4vNaNzv2JcD", forHTTPHeaderField: "x-api-key")
         request.httpMethod = "PUT"
-        let data = "{ \"memberID\" : \"py0008\", \"verificationCode\" : \"123\" }".data(using: String.Encoding.utf8)
+        let data = "{ \"memberID\" : \"\(appModel.cardID)\", \"verificationCode\" : \"\(appModel.accessCode)\", \"backLink\" : \"\(appModel.backLink)\" }".data(using: String.Encoding.utf8)
         request.httpBody = data
         let session = URLSession(configuration: .default)
 
