@@ -16,6 +16,7 @@ struct EOBUploadView: View {
     @State var uploadFromCamera = false
     @State var showCameraSheet = false
     @State var imageSelected = UIImage()
+    
     var body: some View {
         
         VStack {
@@ -82,18 +83,20 @@ struct EOBUploadView: View {
             VStack {
                 if(uploadFromPhotos && !viewModel.images.isEmpty){
                     
-                    ScrollView(.horizontal){
+                    ScrollView(.horizontal, showsIndicators: false){
                         HStack{
                             ForEach(viewModel.images, id:\.cgImage){ image in
                                 Image(uiImage: image)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(width: 250, height: 250)
+                                    .containerRelativeFrame(.horizontal)
                             }
                         }
-                        .padding()
+                        .scrollTargetLayout()
                     }
-                    .padding(.horizontal)
+                    .scrollTargetBehavior(.viewAligned)
+                    .contentMargins(50, for: .scrollContent)
+                    .listRowInsets(EdgeInsets())
                     
                     if(viewModel.submissionLoading){
                         ProgressView()
@@ -109,18 +112,20 @@ struct EOBUploadView: View {
                     Spacer()
                 }
                 if(uploadFromCamera && !viewModel.cameraImages.isEmpty){
-                    ScrollView(.horizontal){
+                    ScrollView(.horizontal, showsIndicators: false){
                         HStack{
                             ForEach(viewModel.cameraImages, id: \.cgImage ) { item in
                                 Image(uiImage: item)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(width: 250, height: 250)
+                                    .containerRelativeFrame(.horizontal)
                             }
                         }
-                        .padding()
+                        .scrollTargetLayout()
                     }
-                    .padding(.horizontal)
+                    .scrollTargetBehavior(.viewAligned)
+                    .contentMargins(50, for: .scrollContent)
+                    .listRowInsets(EdgeInsets())
                         Button {
                             viewModel.cameraIndex = viewModel.cameraIndex + 1
                             
