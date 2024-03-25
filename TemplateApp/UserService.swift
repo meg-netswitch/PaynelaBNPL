@@ -104,6 +104,14 @@ class UserService {
         }
     }
     
+    func registerNewUser(firstname: String, lastname: String, selectedDate: Date, ssn: String, completionHandler: @escaping (Bool) -> Void) {
+        
+        //call graphql mutation
+        //return true/false
+       
+        
+    }
+    
 }
 
 

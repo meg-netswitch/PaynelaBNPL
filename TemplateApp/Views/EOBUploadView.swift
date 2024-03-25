@@ -79,14 +79,22 @@ struct EOBUploadView: View {
                     }
                 }
             }
-            ScrollView {
+            VStack {
                 if(uploadFromPhotos && !viewModel.images.isEmpty){
-                    ForEach(viewModel.images, id:\.cgImage){ image in
-                        Image(uiImage: image)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 250, height: 250)
+                    
+                    ScrollView(.horizontal){
+                        HStack{
+                            ForEach(viewModel.images, id:\.cgImage){ image in
+                                Image(uiImage: image)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 250, height: 250)
+                            }
+                        }
+                        .padding()
                     }
+                    .padding(.horizontal)
+                    
                     if(viewModel.submissionLoading){
                         ProgressView()
                             .progressViewStyle(CircularProgressViewStyle(tint:  Color.black.opacity(0.5)))
@@ -101,12 +109,18 @@ struct EOBUploadView: View {
                     Spacer()
                 }
                 if(uploadFromCamera && !viewModel.cameraImages.isEmpty){
-                        ForEach(viewModel.cameraImages, id: \.cgImage ) { item in
-                            Image(uiImage: item)
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 250, height: 250)
+                    ScrollView(.horizontal){
+                        HStack{
+                            ForEach(viewModel.cameraImages, id: \.cgImage ) { item in
+                                Image(uiImage: item)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 250, height: 250)
+                            }
                         }
+                        .padding()
+                    }
+                    .padding(.horizontal)
                         Button {
                             viewModel.cameraIndex = viewModel.cameraIndex + 1
                             
@@ -150,9 +164,31 @@ struct EOBUploadView: View {
             uploadFromCamera = false
             viewModel.cancelUpload()
             presentationMode.wrappedValue.dismiss()
+            
         } label: {
             Text("Cancel")
         } )
+        .alert(isPresented: $viewModel.connectionErr) {
+            Alert(
+                title: Text("Connection Error"),
+                message: Text("Would you like to try to submit again?"),
+                primaryButton: .default(
+                    Text("Ok"),
+                    action: {
+                        viewModel.connectionErr = false
+                        viewModel.submitPhotos(type: "photos")
+                        
+                    }
+                ),
+                secondaryButton: .default(
+                    Text("Cancel"),
+                    action: {
+                        viewModel.cancelUpload()
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                )
+            )
+        }
 
     }
     

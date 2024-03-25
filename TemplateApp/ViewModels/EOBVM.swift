@@ -18,10 +18,12 @@ class EOBVM: ObservableObject {
     @Published var cameraImages = [UIImage()]
     @Published var cameraIndex = 0
     @Published var submissionLoading = false
+    @Published var connectionErr = false
     
     @Published var images: [UIImage] = []
     @Published var selectedItems: [PhotosPickerItem] = []
     @Published var presignedUrl: String = ""
+    //@Environment(\.presentationMode) private var presentationMode
    
     
     init(){
@@ -38,6 +40,7 @@ class EOBVM: ObservableObject {
         cameraImages.removeAll()
         images.removeAll()
         selectedItems.removeAll()
+        submissionLoading = false
     }
     
     func submitPhotos(type: String){
@@ -74,6 +77,10 @@ class EOBVM: ObservableObject {
             let session = URLSession(configuration: .default)
             
             let task : URLSessionDataTask = session.dataTask(with: request) { [self] (data, response, error) in
+                guard let response = response as? HTTPURLResponse else {
+                    connectionErr = true
+                    return
+                }
                     let statusCode = (response as! HTTPURLResponse).statusCode
                     if statusCode == 200{
                         do {
