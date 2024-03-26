@@ -85,11 +85,23 @@ class UserService {
     }
     
     func findPatient(patient_id: Int, completionHandler: @escaping (Bool, Patient?) -> Void) {
-        //sample patient data
-        let currentPatient = Patient(patient_id: 0001, member_id: "123", patient_name: PatientName(first: "John", middle: "S", last: "Doe"), name_suffix: "", name_title: "", gender: "M", dob: "03/11/76", email: "test@email.com", patient_status: "Active", address: Address(address_1: "100 Main St", address_2: "", city: "Boston", state: "MA", zip: "00000"), phone: Phone(fax: "9998881111", home: "9998881111", mobile: "9998881111", work: "9998881111"), enroll_phase: "", consent_reason: "", kyc_id: "", loan_amount: "15000", modified_dt: "02/22/24", opt_in: OptIn(agreed_timesheet: "", optin_data: "", optin_type: "", product_id: ""), ssn: "", status: "", insurance: Insurance(medical: MedicalInsurance(bin: "", effective_date: "", group_number: "", member_number: "", name: "", pcn: "", plan_type: ""), rx: RxInsurance(bin: "", effective_date: "", group_number: "", member_number: "", name: "", pcn: "", plan_type: "")), created_by_user_id: "", created_dt: "", enroll_dt: "", enrolled_by: "", modified_by_user_id: "")
-        
-        
-        completionHandler(true, currentPatient)
+        Network.shared.apolloClient.fetch(query: PatientFindQuery(patient_id: patient_id)) {
+            result in
+            switch result {
+            case .success (let graphQLResult):
+                DispatchQueue.main.async {
+                    if let response = graphQLResult.data?.patientfind {
+                        let currentPatient = Patient(patient_id: response.patient_id, member_id: response.member_id, patient_name: PatientName(first: response.patient_name.first, middle: response.patient_name.middle, last: response.patient_name.last), name_suffix: response.name_title, name_title: response.name_title, gender: response.gender, dob: response.dob, email: response.email, patient_status: response.patient_status, address: Address(address_1: response.address.address_1, address_2: response.address.address_2, city: response.address.city, state: response.address.state, zip: response.address.zip), phone: Phone(fax: response.phone.fax, home: response.phone.home, mobile: response.phone.mobile, work: response.phone.work), enroll_phase: response.enroll_phase, consent_reason: response.consent_reason, kyc_id: response.kyc_id, loan_amount: response.loan_amount, modified_dt: response.modified_dt, opt_in: OptIn(agreed_timesheet: response.opt_in[0]?.agreed_timesheet ?? "", optin_data: response.opt_in[0]!.optin_data, optin_type: response.opt_in[0]?.optin_type ?? "", product_id: response.opt_in[0]?.product_id ?? ""), ssn: response.ssn, status: response.status, insurance: Insurance(medical: MedicalInsurance(bin: response.insurance.medical.bin, effective_date: response.insurance.medical.effective_date, group_number: response.insurance.medical.group_number, member_number: response.insurance.medical.member_number, name: response.insurance.medical.name, pcn: response.insurance.medical.pcn, plan_type: response.insurance.medical.plan_type), rx: RxInsurance(bin: response.insurance.rx.bin, effective_date: response.insurance.rx.effective_date, group_number: response.insurance.rx.group_number, member_number: response.insurance.rx.member_number, name: response.insurance.rx.name, pcn: response.insurance.rx.pcn, plan_type: response.insurance.rx.plan_type)), created_by_user_id: response.created_by_user_id, created_dt: response.created_dt, enroll_dt: response.enroll_dt, enrolled_by: response.enrolled_by, modified_by_user_id: response.modified_by_user_id)
+                        completionHandler(true, currentPatient)
+                    }
+                }
+            case .failure(let error):
+                print ("error: \(error)")
+                completionHandler(false, self.currentPatient)
+                
+            }
+         
+        }
         
     }
     

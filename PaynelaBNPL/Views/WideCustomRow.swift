@@ -19,18 +19,12 @@ struct WideCustomRow: View {
                     
                 Spacer()
             }
-            .frame(maxWidth: 150.0)
-            //Spacer()
             HStack{
-                //Spacer()
                 Text("\(value)")
                     .fontWeight(.semibold)
                     .multilineTextAlignment(.trailing)
                 Spacer()
-                    
             }
-            .frame(width: 150.0)
-           
         }
 
     }
