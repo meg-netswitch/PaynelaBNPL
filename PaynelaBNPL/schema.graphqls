@@ -1,0 +1,202 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type Address {
+  address_1: String!
+  address_2: String!
+  city: String!
+  state: String!
+  zip: String!
+}
+
+type Company {
+  company_id: Int!
+  company_name: String!
+}
+
+type Document {
+  assign_to: String!
+  attached_to: String!
+  document_id: Int!
+  document_type: String!
+  fax: String!
+  file_type: String!
+  filename: String!
+  generated_dt: String!
+  patient_id: Int!
+  patient_product_id: Int!
+  program: String!
+  reviewed: String!
+  signed_data: String!
+  signed_dt: String!
+  signed_name: String!
+  source: String!
+}
+
+type Insurance {
+  medical: Medical!
+  rx: Rx!
+}
+
+type Medical {
+  bin: String!
+  effective_date: String!
+  group_number: String!
+  member_number: String!
+  name: String!
+  pcn: String!
+  plan_type: String!
+}
+
+type Mutation {
+  updatePatient(patient_id: Int!): Patient
+}
+
+type OptIn {
+  agreed_timesheet: String!
+  optin_data: String!
+  optin_type: String!
+  product_id: String!
+}
+
+type Patient {
+  address: Address!
+  consent_reason: String!
+  created_by_user_id: String!
+  created_dt: String!
+  dob: String!
+  email: String!
+  enroll_dt: String!
+  enroll_phase: String!
+  enrolled_by: String!
+  gender: String!
+  insurance: Insurance!
+  kyc_id: String!
+  loan_amount: String!
+  member_id: String!
+  modified_by_user_id: String!
+  modified_dt: String!
+  name_suffix: String!
+  name_title: String!
+  opt_in: [OptIn]!
+  patient_id: Int!
+  patient_name: PatientName!
+  patient_status: String!
+  phone: Phone!
+  ssn: String!
+  status: String!
+}
+
+type PatientInsurance {
+  bin_number: String!
+  effective_date: String!
+  end_date: String!
+  group_number: String!
+  insurance_company_name: String!
+  insurance_type: String!
+  member_number: String!
+  patient_id: Int!
+  patient_insurance_id: Int!
+  pcn_number: String!
+  plan_type: String!
+}
+
+type PatientName {
+  first: String!
+  last: String!
+  middle: String!
+}
+
+type PatientProduct {
+  patient_id: Int!
+  patient_product_id: Int!
+  patient_product_status: String!
+  product_id: Int!
+}
+
+type PatientProductProvider {
+  created_dt: String!
+  patient_product_id: Int!
+  provider_id: Int!
+  provider_link_type: String!
+}
+
+type Phone {
+  fax: String!
+  home: String!
+  mobile: String!
+  work: String!
+}
+
+type Product {
+  avg_price: String!
+  company_id: Int!
+  end_date: String!
+  product_description: String!
+  product_id: Int!
+  product_name: String!
+  start_date: String!
+}
+
+type Provider {
+  address: Address!
+  created_dt: String!
+  email: String!
+  enroll_dt: String!
+  first_name: String!
+  last_name: String!
+  middle_name: String!
+  modified_dt: String!
+  name_suffix: String!
+  name_title: String!
+  npi: String!
+  num_patients: String!
+  phone: Phone!
+  practice_name: String!
+  provider_id: Int!
+  provider_type: String!
+  status: String!
+}
+
+type Query {
+  allpatients: [Patient]
+  allproviders: [Provider]
+  companyfind(company_id: Int!): Company
+  documentfind(document_id: Int, document_type: String, patient_id: Int, patient_product_id: Int, phone_number: String, provider_name: String): [Document]
+  getpatients(provider_id: Int!): [Patient]
+  getproviders(product: String!): [Provider]
+  patientfind(patient_id: Int!): Patient
+  patientinsurancefind(patient_id: Int!): [PatientInsurance]
+  patientproductfind(patient_product_id: Int!): PatientProduct
+  patientproductproviderfind(patient_product_id: Int!): PatientProductProvider
+  patientproductsearch(patient_id: Int, product_id: Int): [PatientProduct]
+  productfind(product_id: Int!): Product
+  productfindbycompany(company_id: Int!): [Product]
+  providerfind(provider_id: Int!): Provider
+  userlogin(password: String!, username: String!): User
+}
+
+type Rx {
+  bin: String!
+  effective_date: String!
+  group_number: String!
+  member_number: String!
+  name: String!
+  pcn: String!
+  plan_type: String!
+}
+
+type User {
+  created_dt: String!
+  email: String!
+  last_login: String!
+  password: String!
+  user_id: Int!
+  user_role: String!
+  user_status: String!
+  username: String!
+}
+
+

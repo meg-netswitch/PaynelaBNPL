@@ -1,0 +1,91 @@
+query ProviderName {
+  providerfind(provider_id: 10) {
+    provider_type
+    first_name
+    last_name
+  }
+}
+
+query Userlogin($username: String!, $password: String!) {
+    userlogin(username: $username, password: $password) {
+        user_id
+        username
+        email
+        user_role
+        user_status
+        password
+        created_dt
+        last_login
+    }
+}
+
+ query PatientFind($patient_id: Int!) {
+ patientfind(patient_id: $patient_id) {
+   patient_id
+   member_id
+   patient_name {
+     first
+     middle
+     last
+   }
+   name_suffix
+   name_title
+   gender
+   dob
+   email
+   patient_status
+   address {
+     address_1
+     address_2
+     city
+     state
+     zip
+   }
+   phone {
+     fax
+     home
+     mobile
+     work
+   }
+   enroll_phase
+   consent_reason
+   kyc_id
+   loan_amount
+   modified_dt
+   opt_in {
+     agreed_timesheet
+     optin_data
+     optin_type
+     product_id
+   }
+   ssn
+   status
+   insurance {
+     medical {
+       bin
+       effective_date
+       group_number
+       member_number
+       name
+       pcn
+       plan_type
+     }
+     rx {
+       bin
+       effective_date
+       group_number
+       member_number
+       name
+       pcn
+       plan_type
+     }
+   }
+   created_by_user_id
+   created_dt
+   enroll_dt
+   enrolled_by
+   modified_by_user_id
+ }
+}
+
+

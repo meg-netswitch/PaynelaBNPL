@@ -50,6 +50,10 @@
 		0C4CA7962BA0F6060082F8E5 /* CommunicationsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7952BA0F6060082F8E5 /* CommunicationsDetailView.swift */; };
 		0C4CA7982BA0F66A0082F8E5 /* CardVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7972BA0F66A0082F8E5 /* CardVM.swift */; };
 		0C4CA79A2BA0F69F0082F8E5 /* AddPassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7992BA0F69F0082F8E5 /* AddPassView.swift */; };
+		0CA797022BB331F30045B1F2 /* Apollo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA797012BB331F30045B1F2 /* Apollo.swift */; };
+		0CA797052BB3321A0045B1F2 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 0CA797042BB3321A0045B1F2 /* Apollo */; };
+		0CA797082BB3326B0045B1F2 /* schema.graphqls in Resources */ = {isa = PBXBuildFile; fileRef = 0CA797062BB3326B0045B1F2 /* schema.graphqls */; };
+		0CA797092BB3326B0045B1F2 /* Queries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 0CA797072BB3326B0045B1F2 /* Queries.graphql */; };
 		6A2E03B22BA4C56800E26AB0 /* TransactionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E03B12BA4C56800E26AB0 /* TransactionVM.swift */; };
 		6A2E03B42BA4C5C400E26AB0 /* CommunicationsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E03B32BA4C5C400E26AB0 /* CommunicationsVM.swift */; };
 		6A2E03B62BA4C81D00E26AB0 /* EOBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E03B52BA4C81D00E26AB0 /* EOBService.swift */; };
@@ -136,6 +140,9 @@
 		0C4CA7972BA0F66A0082F8E5 /* CardVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardVM.swift; sourceTree = "<group>"; };
 		0C4CA7992BA0F69F0082F8E5 /* AddPassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPassView.swift; sourceTree = "<group>"; };
 		0C7B5A452BA1FB3300DA790C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0CA797012BB331F30045B1F2 /* Apollo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apollo.swift; sourceTree = "<group>"; };
+		0CA797062BB3326B0045B1F2 /* schema.graphqls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = schema.graphqls; sourceTree = "<group>"; };
+		0CA797072BB3326B0045B1F2 /* Queries.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Queries.graphql; sourceTree = "<group>"; };
 		6A2E03B12BA4C56800E26AB0 /* TransactionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionVM.swift; sourceTree = "<group>"; };
 		6A2E03B32BA4C5C400E26AB0 /* CommunicationsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationsVM.swift; sourceTree = "<group>"; };
 		6A2E03B52BA4C81D00E26AB0 /* EOBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EOBService.swift; sourceTree = "<group>"; };
@@ -162,6 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CA797052BB3321A0045B1F2 /* Apollo in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +213,8 @@
 		0C4CA7232BA0E94A0082F8E5 /* PaynelaBNPL */ = {
 			isa = PBXGroup;
 			children = (
+				0CA797072BB3326B0045B1F2 /* Queries.graphql */,
+				0CA797062BB3326B0045B1F2 /* schema.graphqls */,
 				0C7B5A452BA1FB3300DA790C /* Info.plist */,
 				0C4CA7502BA0E97D0082F8E5 /* Models */,
 				0C4CA74F2BA0E9710082F8E5 /* ViewModels */,
@@ -220,6 +230,7 @@
 				6A38D51D2BA485ED004852D0 /* TransactionsService.swift */,
 				6ACF896B2BAB29A300A079AC /* PassService.swift */,
 				6A2E03B52BA4C81D00E26AB0 /* EOBService.swift */,
+				0CA797012BB331F30045B1F2 /* Apollo.swift */,
 			);
 			path = PaynelaBNPL;
 			sourceTree = "<group>";
@@ -334,6 +345,9 @@
 			dependencies = (
 			);
 			name = PaynelaBNPL;
+			packageProductDependencies = (
+				0CA797042BB3321A0045B1F2 /* Apollo */,
+			);
 			productName = TemplateApp;
 			productReference = 0C4CA7212BA0E94A0082F8E5 /* PaynelaBNPL.app */;
 			productType = "com.apple.product-type.application";
@@ -406,6 +420,9 @@
 				Base,
 			);
 			mainGroup = 0C4CA7182BA0E94A0082F8E5;
+			packageReferences = (
+				0CA797032BB3321A0045B1F2 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+			);
 			productRefGroup = 0C4CA7222BA0E94A0082F8E5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -423,6 +440,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C4CA72C2BA0E94B0082F8E5 /* Preview Assets.xcassets in Resources */,
+				0CA797082BB3326B0045B1F2 /* schema.graphqls in Resources */,
+				0CA797092BB3326B0045B1F2 /* Queries.graphql in Resources */,
 				0C4CA7292BA0E94B0082F8E5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -504,6 +523,7 @@
 				0C4CA7842BA0F1FF0082F8E5 /* EditCareCenterVM.swift in Sources */,
 				0C4CA79A2BA0F69F0082F8E5 /* AddPassView.swift in Sources */,
 				0C4CA7602BA0EB6C0082F8E5 /* PatientModel.swift in Sources */,
+				0CA797022BB331F30045B1F2 /* Apollo.swift in Sources */,
 				0C4CA7862BA0F2140082F8E5 /* EditProviderVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -848,6 +868,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0CA797032BB3321A0045B1F2 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.9.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0CA797042BB3321A0045B1F2 /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0CA797032BB3321A0045B1F2 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0C4CA7192BA0E94A0082F8E5 /* Project object */;
 }
