@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -54,6 +54,8 @@
 		0CA797052BB3321A0045B1F2 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 0CA797042BB3321A0045B1F2 /* Apollo */; };
 		0CA797082BB3326B0045B1F2 /* schema.graphqls in Resources */ = {isa = PBXBuildFile; fileRef = 0CA797062BB3326B0045B1F2 /* schema.graphqls */; };
 		0CA797092BB3326B0045B1F2 /* Queries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 0CA797072BB3326B0045B1F2 /* Queries.graphql */; };
+		0CA797142BB3340B0045B1F2 /* GraphQLSchema in Resources */ = {isa = PBXBuildFile; fileRef = 0CA797132BB3340B0045B1F2 /* GraphQLSchema */; };
+		0CA797172BB3345B0045B1F2 /* GraphQLSchema in Frameworks */ = {isa = PBXBuildFile; productRef = 0CA797162BB3345B0045B1F2 /* GraphQLSchema */; };
 		6A2E03B22BA4C56800E26AB0 /* TransactionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E03B12BA4C56800E26AB0 /* TransactionVM.swift */; };
 		6A2E03B42BA4C5C400E26AB0 /* CommunicationsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E03B32BA4C5C400E26AB0 /* CommunicationsVM.swift */; };
 		6A2E03B62BA4C81D00E26AB0 /* EOBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E03B52BA4C81D00E26AB0 /* EOBService.swift */; };
@@ -143,6 +145,7 @@
 		0CA797012BB331F30045B1F2 /* Apollo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apollo.swift; sourceTree = "<group>"; };
 		0CA797062BB3326B0045B1F2 /* schema.graphqls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = schema.graphqls; sourceTree = "<group>"; };
 		0CA797072BB3326B0045B1F2 /* Queries.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Queries.graphql; sourceTree = "<group>"; };
+		0CA797132BB3340B0045B1F2 /* GraphQLSchema */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = GraphQLSchema; sourceTree = "<group>"; };
 		6A2E03B12BA4C56800E26AB0 /* TransactionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionVM.swift; sourceTree = "<group>"; };
 		6A2E03B32BA4C5C400E26AB0 /* CommunicationsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationsVM.swift; sourceTree = "<group>"; };
 		6A2E03B52BA4C81D00E26AB0 /* EOBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EOBService.swift; sourceTree = "<group>"; };
@@ -170,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CA797052BB3321A0045B1F2 /* Apollo in Frameworks */,
+				0CA797172BB3345B0045B1F2 /* GraphQLSchema in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +197,7 @@
 		0C4CA7182BA0E94A0082F8E5 = {
 			isa = PBXGroup;
 			children = (
+				0CA797132BB3340B0045B1F2 /* GraphQLSchema */,
 				0C4CA7232BA0E94A0082F8E5 /* PaynelaBNPL */,
 				0C4CA7342BA0E94B0082F8E5 /* PaynelaBNPLTests */,
 				0C4CA73E2BA0E94B0082F8E5 /* PaynelaBNPLUITests */,
@@ -347,6 +352,7 @@
 			name = PaynelaBNPL;
 			packageProductDependencies = (
 				0CA797042BB3321A0045B1F2 /* Apollo */,
+				0CA797162BB3345B0045B1F2 /* GraphQLSchema */,
 			);
 			productName = TemplateApp;
 			productReference = 0C4CA7212BA0E94A0082F8E5 /* PaynelaBNPL.app */;
@@ -422,6 +428,7 @@
 			mainGroup = 0C4CA7182BA0E94A0082F8E5;
 			packageReferences = (
 				0CA797032BB3321A0045B1F2 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				0CA797152BB3345B0045B1F2 /* XCLocalSwiftPackageReference "GraphQLSchema" */,
 			);
 			productRefGroup = 0C4CA7222BA0E94A0082F8E5 /* Products */;
 			projectDirPath = "";
@@ -443,6 +450,7 @@
 				0CA797082BB3326B0045B1F2 /* schema.graphqls in Resources */,
 				0CA797092BB3326B0045B1F2 /* Queries.graphql in Resources */,
 				0C4CA7292BA0E94B0082F8E5 /* Assets.xcassets in Resources */,
+				0CA797142BB3340B0045B1F2 /* GraphQLSchema in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -869,6 +877,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		0CA797152BB3345B0045B1F2 /* XCLocalSwiftPackageReference "GraphQLSchema" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = GraphQLSchema;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		0CA797032BB3321A0045B1F2 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -885,6 +900,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0CA797032BB3321A0045B1F2 /* XCRemoteSwiftPackageReference "apollo-ios" */;
 			productName = Apollo;
+		};
+		0CA797162BB3345B0045B1F2 /* GraphQLSchema */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GraphQLSchema;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

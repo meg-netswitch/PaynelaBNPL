@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import GraphQLSchema
+
 class UserService {
     
     static let shared = UserService()
@@ -36,20 +38,43 @@ class UserService {
     }
     
     func validateUser(username: String, withPassword password: String, completionHandler: @escaping (Bool) -> Void) {
-        let currentUser = User(user_id: 0001, username: "testUser", email: "test@email.com", user_role: "Patient", user_status: "Active", password: password, created_dt: "02/22/24", last_login: "02/22/24")
-        self.currentUser = currentUser
-        self.currentUserID = 0001
-        self.findPatient(patient_id: self.currentUserID) {(result, patient) in
-            if result {
-                self.currentPatient = patient
-                completionHandler(true)
-            }
-            else {
+      
+        // call the external service to validate the user and return the result
+        Network.shared.apolloClient.fetch(query: UserloginQuery(username: username, password: password)) {
+            result in
+            switch result {
+            case .success (let graphQLResult):
+                DispatchQueue.main.async {
+                   
+                    if let response = graphQLResult.data?.userlogin {
+                        let currentUser = User(user_id: response.user_id, username: response.username, email: response.email, user_role: response.user_role, user_status: response.user_status, password: response.password, created_dt: response.created_dt, last_login: response.last_login)
+                        self.currentUser = currentUser
+                        self.currentUserID = response.user_id
+                        print(currentUser)
+                        self.findPatient(patient_id: response.user_id) {(result, patient) in
+                            if result {
+                                self.currentPatient = patient
+                                completionHandler(true)
+                            }
+                            else {
+                                completionHandler(false)
+                            }
+                        }
+                        
+
+                    }
+                    
+
+                }
+                
+                
+            case .failure(let error):
+                print ("error: \(error)")
                 completionHandler(false)
+                
             }
+         
         }
-        
-        
 
     }
     
