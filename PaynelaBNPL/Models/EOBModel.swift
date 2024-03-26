@@ -8,6 +8,7 @@
 import Foundation
 
 struct EOB: Codable {
+    var id: Int
     var eob_id: Int
     var file_name: String
     var date: String

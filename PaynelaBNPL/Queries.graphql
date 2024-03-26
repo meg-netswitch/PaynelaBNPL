@@ -88,4 +88,24 @@ query Userlogin($username: String!, $password: String!) {
  }
 }
 
+query DocumentFind($patient_id: Int!)  {
+  documentfind(patient_id: $patient_id) {
+    assign_to
+    attached_to
+    document_id
+    document_type
+    fax
+    file_type
+    filename
+    generated_dt
+    patient_id
+    patient_product_id
+    program
+    reviewed
+    signed_data
+    signed_dt
+    signed_name
+    source
+  }
+}
 

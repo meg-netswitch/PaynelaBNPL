@@ -15,6 +15,7 @@ class EOBVM: ObservableObject {
     let eobModel = EOBService.shared
     let userModel = UserService.shared
     
+    @Published var eobList: [EOB] = []
     @Published var cameraImages = [UIImage()]
     @Published var cameraIndex = 0
     @Published var submissionLoading = false
@@ -23,18 +24,19 @@ class EOBVM: ObservableObject {
     @Published var images: [UIImage] = []
     @Published var selectedItems: [PhotosPickerItem] = []
     @Published var presignedUrl: String = ""
-    //@Environment(\.presentationMode) private var presentationMode
-   
-    
+
     init(){
-        eobModel.getAllEOB(patient_id: userModel.currentUserID){(result, eob) in
+        eobModel.getAllEOB(patient_id: userModel.currentUserID) { result, eobs in
             if result {
-                
-            } else {
+                for eob in eobs {
+                    self.eobList.append(eob!)
+                }
                 
             }
+            
         }
     }
+    
     
     func cancelUpload(){
         cameraImages.removeAll()

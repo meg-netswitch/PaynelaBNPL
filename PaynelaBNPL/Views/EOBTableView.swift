@@ -36,16 +36,18 @@ struct EOBTableView: View {
                     .padding()
                     .padding(.top, 10)
                     .padding(.bottom, 10)
-                    .background(item.eob_id % 2 == 0 ? Color.white : Color.lightGray)
+                    .background(item.id % 2 == 0 ? Color.white : Color.lightGray)
                 }
                 
                 
             }
             
         }
+        
     }
     
 }
+
 
 #Preview {
     EOBTableView()

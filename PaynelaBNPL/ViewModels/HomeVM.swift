@@ -7,12 +7,13 @@
 
 import Foundation
 
-
 class HomeVM: ObservableObject {
     
     let userModel = UserService.shared
+    let eobModel = EOBService.shared
     
     func logout(){
         userModel.logout()
+        eobModel.clearEOBList()
     }
 }
