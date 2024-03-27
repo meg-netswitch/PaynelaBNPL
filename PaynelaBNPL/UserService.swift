@@ -61,7 +61,9 @@ class UserService {
                             }
                         }
                         
-
+                        
+                    } else {
+                        completionHandler(false)
                     }
                     
 

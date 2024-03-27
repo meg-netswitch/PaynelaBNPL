@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    //@State private var unlocked = false
+
     @StateObject private var viewModel = LoginVM()
     @FocusState private var fieldIsFocused: Bool
     
@@ -133,31 +133,29 @@ struct LoginView: View {
                 
             }
             .alert(isPresented: $viewModel.showAlert) {
-                Alert(
-                    title: Text("Would you like to update stored user credentials?"),
-                    message: Text("If not you can still login but the credentials will not be saved"),
-                    primaryButton: .default(
-                        Text("Yes"),
-                        action: {
-                            viewModel.loginUpdateKeychain()
-                        }
-                    ),
-                    secondaryButton: .default(
-                        Text("No"),
-                        action: {
-                            viewModel.loginWithoutUpdatingKeychain()
-                        }
+                if(viewModel.invalidCredentials){
+                    Alert(title: Text("Invalid username/password."))
+                } else {
+                    Alert(
+                        title: Text("Would you like to update stored user credentials?"),
+                        message: Text("If not you can still login but the credentials will not be saved"),
+                        primaryButton: .default(
+                            Text("Yes"),
+                            action: {
+                                viewModel.loginUpdateKeychain()
+                            }
+                        ),
+                        secondaryButton: .default(
+                            Text("No"),
+                            action: {
+                                viewModel.loginWithoutUpdatingKeychain()
+                            }
+                        )
                     )
-                )
+                }
             }
-                
-            
         }
-        
     }
-        
-    
-    
 }
 
 #Preview {
