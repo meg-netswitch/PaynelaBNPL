@@ -11,43 +11,36 @@ struct EOBTableView: View {
     @StateObject private var viewModel = EOBVM()
     
     var body: some View {
-        ScrollView {
             if(viewModel.eobModel.eobList != nil){
-                ForEach(viewModel.eobModel.eobList!, id: \.eob_id) { item in
+                List(viewModel.eobModel.eobList!, id: \.eob_id) { item in
                     HStack {
-                        Text("\(item.date)")
-                            .multilineTextAlignment(.leading)
-                            .frame(width: 70)
-                            .padding(.leading, 5)
-                            .foregroundStyle(Color.black)
-                        Text("\(item.file_name)")
-                            .multilineTextAlignment(.leading)
-                            .frame(width: 120)
-                            .padding(.leading, 5)
-                            .foregroundStyle(Color.black)
-                        Text("\(item.status)")
-                            .multilineTextAlignment(.leading)
-                            .frame(width: 130)
-                            .padding(.leading, 5)
-                            .foregroundStyle(Color.black)
-                       
+                        HStack{
+                            Text("\(item.date)")
+                            Spacer()
+                        }
+                        .frame(width: 80)
+                        HStack{
+                            Text("\(item.file_name)")
+                            Spacer()
+                        }
+                        .frame(width: 120)
+                        HStack{
+                            Text("\(item.status)")
+                            Spacer()
+                        }
+                        .frame(width: 120)
+                        
                         Spacer()
                     }
-                    .padding()
-                    .padding(.top, 10)
-                    .padding(.bottom, 10)
-                    .background(item.id % 2 == 0 ? Color.white : Color.lightGray)
+                    .padding(.vertical)
+                    .listRowBackground(item.id % 2 == 0 ? Color.white : Color.lightGray)
                 }
-                
-                
+                .listStyle(.inset)
+            } else {
+                Spacer()
             }
-            
         }
-        
-    }
-    
 }
-
 
 #Preview {
     EOBTableView()

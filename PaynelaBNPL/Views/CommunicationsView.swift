@@ -16,24 +16,29 @@ struct CommunicationsView: View {
                 Spacer()
             }
             HStack {
-                Text("Date")
-                    .fontWeight(.semibold)
-                    .multilineTextAlignment(.leading)
-                    .frame(width: 80)
-                Text("Subject")
-                    .fontWeight(.semibold)
-                    .multilineTextAlignment(.leading)
-                    .frame(width: 110)
-                Text("Type")
-                    .fontWeight(.semibold)
-                    .multilineTextAlignment(.leading)
-                    .frame(width: 50)
-                Text("")
-                    .fontWeight(.semibold)
-                    .frame(width: 20)
+                HStack{
+                    Text("Date")
+                        .fontWeight(.semibold)
+                    Spacer()
+                }
+                .frame(width: 80)
+                HStack{
+                    Text("Subject")
+                        .fontWeight(.semibold)
+                    Spacer()
+                }
+                .frame(width: 120)
+                HStack{
+                    Text("Type")
+                        .fontWeight(.semibold)
+                    Spacer()
+                }
+                .frame(width: 120)
+
                 Spacer()
             }
-            .padding(.top, 20)
+            .padding(.leading, 20)
+            .padding(.top, 10)
             CommunicationsTable()
         }
         

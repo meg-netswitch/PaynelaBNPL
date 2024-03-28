@@ -15,29 +15,31 @@ struct TransactionView: View {
                     Spacer()
                 }
                 HStack {
-                    Text("Date")
-                        .fontWeight(.semibold)
-                        .multilineTextAlignment(.leading)
-                        .frame(width: 50)
-                    Text("Amount")
-                        .fontWeight(.semibold)
-                        .multilineTextAlignment(.leading)
-                        .frame(width: 70)
-                        .padding(.leading, 30)
-                    Text("Status")
-                        .fontWeight(.semibold)
-                        .multilineTextAlignment(.leading)
-                        .frame(width: 60)
-                        .padding(.leading, 10)
-                    Text("Balance")
-                        .fontWeight(.semibold)
-                        .multilineTextAlignment(.leading)
-                        .frame(width: 70)
-                        .padding(.leading, 25)
-                    Text("")
-                        .fontWeight(.semibold)
-                        .multilineTextAlignment(.leading)
-                        .frame(width: 20)
+                    HStack{
+                        Text("Date")
+                            .fontWeight(.semibold)
+                        Spacer()
+                    }
+                    .frame(width: 70)
+                    HStack{
+                        Text("Amount")
+                            .fontWeight(.semibold)
+                        Spacer()
+                    }
+                    .frame(width: 85)
+                    HStack{
+                        Text("Status")
+                            .fontWeight(.semibold)
+                        Spacer()
+                    }
+                    .frame(width: 85)
+                    HStack{
+                        Text("Balance")
+                            .fontWeight(.semibold)
+                        Spacer()
+                    }
+                    .frame(width: 80)
+
                     Spacer()
                 }
                 .padding(.leading, 20)

@@ -23,26 +23,28 @@ struct EOBView: View {
                 Spacer()
             }
             HStack {
-                Text("Date")
-                    .multilineTextAlignment(.leading)
-                    .frame(width: 100)
-                    .padding(.leading, 5)
-                    .foregroundStyle(Color.black)
-                Text("File Name")
-                    .multilineTextAlignment(.leading)
-                    .frame(width: 100)
-                    .padding(.leading, 5)
-                    .foregroundStyle(Color.black)
-                Text("Status")
-                    .multilineTextAlignment(.leading)
-                    .frame(width: 100)
-                    .padding(.leading, 5)
-                    .foregroundStyle(Color.black)
+                HStack{
+                    Text("Date")
+                        .fontWeight(.semibold)
+                    Spacer()
+                }
+                .frame(width: 80)
+                HStack{
+                    Text("File Name")
+                        .fontWeight(.semibold)
+                    Spacer()
+                }
+                .frame(width: 120)
+                HStack{
+                    Text("Status")
+                        .fontWeight(.semibold)
+                    Spacer()
+                }
+                .frame(width: 120)
                 Spacer()
             }
-            .padding()
+            .padding(.leading, 20)
             .padding(.top, 10)
-            .background(.white)
             EOBTableView()
         }
     }

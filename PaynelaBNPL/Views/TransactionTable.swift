@@ -12,57 +12,48 @@ struct TransactionTable: View {
     @StateObject private var viewModel = TransactionsVM()
     
     var body: some View {
-            ScrollView {
                 if(viewModel.transactionModel.transactionData != nil){
-                    ForEach(viewModel.transactionModel.transactionData!, id: \.transaction_id) { item in
+                    List(viewModel.transactionModel.transactionData!, id: \.transaction_id) { item in
                         NavigationLink {
                             TransactionDetailsView(transactionDetail: item)
                         } label: {
                             HStack {
-                                Text(item.date)
-                                    .multilineTextAlignment(.leading)
-                                    .frame(width: 70)
-                                    .padding(.leading, 5)
-                                    .foregroundStyle(Color.black)
-                                Text("$\(item.amount).00")
-                                    .multilineTextAlignment(.leading)
-                                    .frame(width: 80)
-                                    .padding(.leading, 5)
-                                    .foregroundStyle(Color.black)
-                                Text(item.status)
-                                    .multilineTextAlignment(.leading)
-                                    .frame(width: 80)
-                                    .padding(.leading, 5)
-                                    .foregroundStyle(Color.black)
-                                Text("$\(item.balance).00")
-                                    .multilineTextAlignment(.leading)
-                                    .frame(width: 80)
-                                    .padding(.leading, 5)
-                                    .foregroundStyle(Color.black)
+                                HStack{
+                                    Text(item.date)
+                                        .foregroundStyle(Color.black)
+                                    Spacer()
+                                }
+                                .frame(width: 80)
+                                HStack{
+                                    Text("$\(item.amount)")
+                                    Spacer()
+                                }
+                                .frame(width: 80)
+                                HStack{
+                                    Text(item.status)
+                                    //Spacer()
+                                }
+                                .frame(width: 80)
+                                HStack{
+                                    Text("$\(item.balance)")
+                                }
+                                .frame(width: 80)
                                 Spacer()
-                                Image(systemName: "chevron.right")
-                                    .foregroundStyle(Color.black)
-                                    .padding(.trailing, 5)
                             }
-                            .padding()
-                            .padding(.top, 10)
-                            .padding(.bottom, 10)
-                            .background(item.transaction_id % 2 == 0 ? Color.white : Color.lightGray)
+                            
                             
                         }
-
-                        
+                        .padding(.vertical)
+                        .listRowBackground(item.transaction_id % 2 == 0 ? Color.white : Color.lightGray)
                     }
+                    .listStyle(.inset)
+                } else {
+                    Spacer()
                 }
-                
-                
-                
-            
-        }
-        
         
     }
 }
+
 #Preview {
     TransactionTable()
 }
