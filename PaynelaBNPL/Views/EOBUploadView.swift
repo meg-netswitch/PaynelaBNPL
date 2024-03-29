@@ -151,9 +151,10 @@ struct EOBUploadView: View {
                             showCameraSheet = true
                         } label: {
                             Text("add another image")
+                                .fontWeight(.semibold)
                                 .foregroundColor(.white)
-                                .frame(width: 150, height: 50)
-                                .background(Color.black)
+                                .frame(width: 300, height: 50)
+                                .background(Color.gray)
                                 .cornerRadius(5)
                         }
                     if(viewModel.submissionLoading){
@@ -165,8 +166,9 @@ struct EOBUploadView: View {
                             viewModel.submitPhotos(type: "camera")
                         } label: {
                             Text("Submit")
+                                .fontWeight(.semibold)
                                 .foregroundColor(.white)
-                                .frame(width: 150, height: 50)
+                                .frame(width: 300, height: 50)
                                 .background(Color.companyButton1)
                                 .cornerRadius(5)
                         }
