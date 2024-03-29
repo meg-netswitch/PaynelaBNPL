@@ -24,11 +24,12 @@ struct TransactionDetailsView: View {
                 WideCustomRow(title: "Balance", value: "$\(transactionDetail.balance)")
                 WideCustomRow(title: "Status", value: "\(transactionDetail.status)")
             }
+            .listStyle(.inset)
             
         }
     }
 }
 
 #Preview {
-    TransactionDetailsView(transactionDetail: Transaction(transaction_id: 1, date: "02/10/24", amount: "200", status: "Accepted", balance: "1800"))
+    TransactionDetailsView(transactionDetail: Transaction(id: 1, transaction_id: 1, date: "02/10/24", amount: "200", status: "Accepted", balance: "1800"))
 }

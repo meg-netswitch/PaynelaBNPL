@@ -18,7 +18,9 @@ struct EditCareCenterView: View {
                     Spacer()
                     Button {
                         viewModel.updateCareCenter()
-                        dismiss()
+                        if(viewModel.dismiss){
+                            dismiss()
+                        }
                     } label: {
                         Text("save")
                             .padding(.vertical)
@@ -40,6 +42,12 @@ struct EditCareCenterView: View {
                     TextField("Email", text: $viewModel.email)
                 }
             }
+            .alert(isPresented: $viewModel.updateErr, content: {
+                Alert(title: Text("Error updating care center."))
+            })
+            .alert(isPresented: $viewModel.missingFields, content: {
+                Alert(title: Text("Missing fields."))
+            })
     }
 }
 

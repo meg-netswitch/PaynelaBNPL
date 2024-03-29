@@ -17,7 +17,6 @@ struct RegisterView: View {
             VStack{
                 LoggedOutHeader()
                 VStack {
-
                     TextField("", text: $viewModel.firstname, prompt: Text("First Name")
                         .foregroundColor(viewModel.appModel.backgroundLight ? Color.black.opacity(0.5) : Color.white.opacity(0.5)))
                         .padding()
@@ -35,7 +34,6 @@ struct RegisterView: View {
                     DatePicker(selection: $viewModel.selectedDate,displayedComponents: [.date], label: {
                         Text("DOB")
                             .foregroundColor(viewModel.appModel.backgroundLight ? Color.black.opacity(0.5) : Color.white.opacity(0.5))
-                        
                     })
                     .padding()
                     .frame(width: 300, height: 50)
@@ -50,36 +48,44 @@ struct RegisterView: View {
                         .background(viewModel.appModel.backgroundLight ? Color.white.opacity(0.1) : Color.black.opacity(0.1))
                         .foregroundStyle(viewModel.appModel.backgroundLight ? .black : .white)
                         .cornerRadius(5)
-                    Button {
-                        Task {
-                            viewModel.register(firstname: viewModel.firstname, lastname: viewModel.lastname, selectedDate: viewModel.selectedDate, ssn: viewModel.ssn)
+                    if(viewModel.loading){
+                        ProgressView()
+                            .progressViewStyle(CircularProgressViewStyle(tint: viewModel.appModel.backgroundLight ? Color.black.opacity(0.5) : Color.white.opacity(0.5)))
+                            .padding(15)
+                    } else {
+                        Button {
+                            Task {
+                                viewModel.loading = true
+                                viewModel.register(firstname: viewModel.firstname, lastname: viewModel.lastname, selectedDate: viewModel.selectedDate, ssn: viewModel.ssn)
+                                dismiss()
+                            }
+                        } label: {
+                            Text("REGISTER")
+                                .fontWeight(.semibold)
+                                .foregroundColor(.white)
+                                .frame(width: 300, height: 50)
+                                .background(Color.companyButton1)
+                                .cornerRadius(5)
                         }
-                    } label: {
-                        Text("REGISTER")
-                            .fontWeight(.semibold)
-                            .foregroundColor(.white)
-                            .frame(width: 300, height: 50)
-                            .background(Color.companyButton1)
-                            .cornerRadius(5)
+                        Button {
+                            dismiss()
+                        } label: {
+                            Text("Touch here to login")
+                                .foregroundStyle(viewModel.appModel.backgroundLight ? .black : .white)
+                        }
+                        .padding()
                     }
-                    
-                    Button {
-                        dismiss()
-                    } label: {
-                        Text("Touch here to login")
-                            .foregroundStyle(viewModel.appModel.backgroundLight ? .black : .white)
-                    }
-                    .padding()
                     Spacer()
                 }
                 Spacer()
             }
-         
-            
+            .alert(isPresented: $viewModel.registerErr) {
+                Alert(title: Text("\(viewModel.errMsg)"))
+            }
         }
-        
     }
 }
+
 #Preview {
     RegisterView()
 }

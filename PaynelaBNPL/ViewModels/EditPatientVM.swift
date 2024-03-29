@@ -21,13 +21,10 @@ class EditPatientVM: ObservableObject {
     @Published var zip: String = ""
     @Published var phone: String = ""
     @Published var email: String = ""
-    
     @Published var updateErr: Bool = false
-    
-    
+    @Published var missingFields: Bool = false
+    @Published var dismiss = false
 
-    
-    
     
     init() {
         firstName = userModel.currentPatient?.patient_name.first ?? ""
@@ -38,27 +35,23 @@ class EditPatientVM: ObservableObject {
         zip = userModel.currentPatient?.address.zip ?? ""
         phone = userModel.currentPatient?.phone.home ?? ""
         email = userModel.currentPatient?.email ?? ""
-
     }
-    
     
     func updatePatient(){
         print("UPDATING PATIENT INFO...")
+        guard (firstName != "" && lastName != "" && address != "" && city != "" && state != "" && zip != "" && phone != "" && email != "") else {
+            self.missingFields = true
+            return
+        }
         
         userModel.updatePatient(first_name: self.firstName, last_name: self.lastName, address: self.address, city: self.city, state: self.state, zip: self.zip, phone: self.phone, email: self.email){ (result, patient)  in
             if result {
                 print("UPDATE COMPLETE.")
-                
-                //dismiss view
-                
-                
+                self.dismiss = true
             } else {
                 //error updating
                 self.updateErr = true
-                
             }
         }
     }
-    
-
 }

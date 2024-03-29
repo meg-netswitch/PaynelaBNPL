@@ -18,7 +18,9 @@ struct EditProviderView: View {
                     Spacer()
                     Button {
                         viewModel.updateProvider()
-                        dismiss()
+                        if(viewModel.dismiss){
+                            dismiss()
+                        }
                     } label: {
                         Text("save")
                             .padding(.vertical)
@@ -39,7 +41,12 @@ struct EditProviderView: View {
                     TextField("ZIP", text: $viewModel.zip)
                 }
             }
-
+            .alert(isPresented: $viewModel.updateErr, content: {
+                Alert(title: Text("Error updating provider."))
+            })
+            .alert(isPresented: $viewModel.missingFields, content: {
+                Alert(title: Text("Missing fields."))
+            })
     }
 }
 

@@ -13,8 +13,6 @@ struct ProfileView: View {
 
     var body: some View {
         VStack{
-            
-            
             HStack {
                 Button {
                     showPatient = true
@@ -28,13 +26,6 @@ struct ProfileView: View {
                     }
                     .background(showPatient ? Color.companyButton1 : Color.gray)
                      .cornerRadius(5)
-                    /*
-                    Text("Patient")
-                        .foregroundColor(.white)
-                        .frame(width: 150, height: 35)
-                        .background(showPatient ? Color.paynelaBlue : Color.gray)
-                         .cornerRadius(5)
-                    */
                 }
                 .padding(.trailing, 2.5)
                 Button {
@@ -49,13 +40,6 @@ struct ProfileView: View {
                     }
                     .background(showPatient ? Color.gray : Color.companyButton1)
                      .cornerRadius(5)
-                    /*
-                    Text("Provider")
-                        .foregroundColor(.white)
-                        .frame(width: 150, height: 35)
-                        .background(showPatient ? Color.gray : Color.paynelaBlue)
-                        .cornerRadius(5)
-                     */
                 }
             }
             .padding()
@@ -66,8 +50,6 @@ struct ProfileView: View {
             }
             
         }
-        //.background(Color.paynelaGrey)
-        
     }
 }
 

@@ -31,5 +31,5 @@ struct CommunicationsDetailView: View {
 }
 
 #Preview {
-    CommunicationsDetailView(communicationsDetail: Communication(communication_id: 1, date: "02/10/24", subject: "Welcome Message", type: "Email: smith@company.com"))
+    CommunicationsDetailView(communicationsDetail: Communication(id: 1, communication_id: 1, date: "02/10/24", subject: "Welcome Message", type: "Email: smith@company.com"))
 }

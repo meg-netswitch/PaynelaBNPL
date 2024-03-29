@@ -13,6 +13,7 @@ import PDFKit
 class EOBVM: ObservableObject {
 
     let eobModel = EOBService.shared
+    let appModel = AppService.shared
     let userModel = UserService.shared
     
     @Published var eobList: [EOB] = []
@@ -70,9 +71,9 @@ class EOBVM: ObservableObject {
      
 
             //call gateway api and get back presigned url
-            let urlTest = URL(string: "https://awttq5f0g5.execute-api.us-east-2.amazonaws.com/v1/")
+            let urlTest = URL(string: "\(appModel.uploadEOBURL)")
             var request = URLRequest(url: urlTest!)
-            request.setValue("S9oITeHHGe88Lnfzwzant8JUIrKir4vNaNzv2JcD", forHTTPHeaderField: "x-api-key")
+            request.setValue("\(appModel.uploadEOB_xapikey)", forHTTPHeaderField: "x-api-key")
             request.httpMethod = "PUT"
             let postData = "{ \"member_id\" : \"\(userModel.currentUserID)\" }".data(using: String.Encoding.utf8)
             request.httpBody = postData

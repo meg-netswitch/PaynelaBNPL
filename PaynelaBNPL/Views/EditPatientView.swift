@@ -18,7 +18,9 @@ struct EditPatientView: View {
                     Spacer()
                     Button {
                         viewModel.updatePatient()
-                        dismiss()
+                        if(viewModel.dismiss){
+                            dismiss()
+                        }
                         
                     } label: {
                         Text("save")
@@ -43,11 +45,12 @@ struct EditPatientView: View {
                 }
             }
             .alert(isPresented: $viewModel.updateErr, content: {
-                Alert(title: Text("Error updating profile information"))
+                Alert(title: Text("Error updating profile."))
             })
-            
+            .alert(isPresented: $viewModel.missingFields, content: {
+                Alert(title: Text("Missing fields."))
+            })
         }
-        
 }
 
 #Preview {

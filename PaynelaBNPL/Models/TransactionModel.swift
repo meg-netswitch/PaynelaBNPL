@@ -8,6 +8,7 @@
 import Foundation
 
 struct Transaction {
+    var id: Int
     var transaction_id: Int
     var date: String
     var amount: String

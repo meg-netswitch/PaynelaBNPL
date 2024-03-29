@@ -18,38 +18,35 @@ class EditCareCenterVM: ObservableObject {
     @Published var zip: String = ""
     @Published var phone: String = ""
     @Published var email: String = ""
-    
     @Published var updateErr: Bool = false
-    
+    @Published var missingFields: Bool = false
+    @Published var dismiss = false
     
     
     init() {
-        /*
-         practice = userModel.currentPatient?. ?? ""
-         address = userModel.currentPatient?.address.address_1 ?? ""
-         city = userModel.currentPatient?.address.city ?? ""
-         state = userModel.currentPatient?.address.state ?? ""
-         zip = userModel.currentPatient?.address.zip ?? ""
-         phone = userModel.currentPatient?.phone.home ?? ""
-         email = userModel.currentPatient?.email ?? ""
-         */
+        practice = userModel.currentCareCenter?.practice ?? ""
+        address = userModel.currentCareCenter?.address.address_1 ?? ""
+        city = userModel.currentCareCenter?.address.city ?? ""
+        state = userModel.currentCareCenter?.address.state ?? ""
+        zip = userModel.currentCareCenter?.address.zip ?? ""
+        phone = userModel.currentCareCenter?.phone ?? ""
+        email = userModel.currentCareCenter?.email ?? ""
     }
     
     func updateCareCenter(){
         print("UPDATING CARE CENTER...")
+        guard (practice != "" && address != "" && city != "" && state != "" && zip != "" && phone != "" && email != "") else {
+            self.missingFields = true
+            return
+        }
         
         userModel.updateCareCenter(practice: self.practice, address: self.address, city: self.city, state: self.state, zip: self.zip, phone: self.phone, email: self.email){ (result, patient)  in
             if result {
                 print("UPDATE COMPLETE.")
-                
-                //dismiss view
-                
-                
-                
+                self.dismiss = true
             } else {
                 //error updating
                 self.updateErr = true
-                
             }
         }
     }

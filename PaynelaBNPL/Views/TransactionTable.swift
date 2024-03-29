@@ -12,8 +12,8 @@ struct TransactionTable: View {
     @StateObject private var viewModel = TransactionsVM()
     
     var body: some View {
-                if(viewModel.transactionModel.transactionData != nil){
-                    List(viewModel.transactionModel.transactionData!, id: \.transaction_id) { item in
+                if(viewModel.transactionModel.transactionList != nil){
+                    List(viewModel.transactionModel.transactionList!, id: \.transaction_id) { item in
                         NavigationLink {
                             TransactionDetailsView(transactionDetail: item)
                         } label: {
@@ -44,7 +44,7 @@ struct TransactionTable: View {
                             
                         }
                         .padding(.vertical)
-                        .listRowBackground(item.transaction_id % 2 == 0 ? Color.white : Color.lightGray)
+                        .listRowBackground(item.id % 2 == 0 ? Color.white : Color.lightGray)
                     }
                     .listStyle(.inset)
                 } else {
@@ -53,7 +53,6 @@ struct TransactionTable: View {
         
     }
 }
-
 #Preview {
     TransactionTable()
 }

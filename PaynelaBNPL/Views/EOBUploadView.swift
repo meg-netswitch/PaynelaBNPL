@@ -20,66 +20,80 @@ struct EOBUploadView: View {
     var body: some View {
         
         VStack {
+            HStack {
+                PageHeading(title: "Upload EOB")
+                Spacer()
+            }
             if(!uploadFromPhotos && !uploadFromCamera){
-                HStack {
-                    PhotosPicker(selection: $viewModel.selectedItems,
-                                         matching: .images) {
-                                VStack {
-                                    Image(systemName: "photo")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .foregroundStyle(.black)
-                                        .frame(height: 20)
-                                    Text("Photo Library")
-                                        .fontWeight(.semibold)
-                                        .font(.caption)
-                                        .foregroundStyle(.black)
-                                    
-                                }
-                                .frame(width: 100, height: 60)
-                                .background(.white)
-                                .cornerRadius(5)
-                    }.onChange(of: viewModel.selectedItems) { selectedItems in
-                        uploadFromPhotos = true
-                        viewModel.images = []
-                        for item in selectedItems {
-                            item.loadTransferable(type: Data.self) { result in
-                                switch result {
-                                case .success(let imageData):
-                                    if let imageData {
-                                        viewModel.images.append(UIImage(data: imageData)!)
-                                    } else {
-                                        print("No supported content type found.")
+                VStack {
+                    Text("Select")
+                        .fontWeight(.semibold)
+                        .padding(.bottom)
+                    HStack {
+                        PhotosPicker(selection: $viewModel.selectedItems,
+                                     matching: .images) {
+                            VStack {
+                                Image(systemName: "photo")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .foregroundStyle(.black)
+                                    .frame(height: 20)
+                                Text("Photo Library")
+                                    .fontWeight(.semibold)
+                                    .font(.caption)
+                                    .foregroundStyle(.black)
+                                
+                            }
+                            .frame(width: 100, height: 80)
+                            .background(.gray.opacity(0.25))
+                            .cornerRadius(5)
+                        }.onChange(of: viewModel.selectedItems) { selectedItems in
+                            uploadFromPhotos = true
+                            viewModel.images = []
+                            for item in selectedItems {
+                                item.loadTransferable(type: Data.self) { result in
+                                    switch result {
+                                    case .success(let imageData):
+                                        if let imageData {
+                                            viewModel.images.append(UIImage(data: imageData)!)
+                                        } else {
+                                            print("No supported content type found.")
+                                        }
+                                    case .failure(let error):
+                                        print(error)
                                     }
-                                case .failure(let error):
-                                    print(error)
                                 }
                             }
                         }
-                    }
-                    Button{
-                        viewModel.cancelUpload()
-                        uploadFromCamera = true
-                        showCameraSheet = true
-                    } label: {
-                        VStack {
-                            Image(systemName: "camera")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .foregroundStyle(.black)
-                                .frame(height: 20)
-                            Text("Camera")
-                                .fontWeight(.semibold)
-                                .font(.caption)
-                                .foregroundStyle(.black)
-                            
+                        Button{
+                            viewModel.cancelUpload()
+                            uploadFromCamera = true
+                            showCameraSheet = true
+                        } label: {
+                            VStack {
+                                Image(systemName: "camera")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .foregroundStyle(.black)
+                                    .frame(height: 20)
+                                Text("Camera")
+                                    .fontWeight(.semibold)
+                                    .font(.caption)
+                                    .foregroundStyle(.black)
+                                
+                            }
+                            .frame(width: 100, height: 80)
+                            .background(.gray.opacity(0.25))
+                            .cornerRadius(5)
                         }
-                        .frame(width: 100, height: 60)
-                        .background(.white)
-                        .cornerRadius(5)
                     }
                 }
+                .padding(30)
+                .background(.lightGray)
+                .cornerRadius(10)
+                
             }
+                
             VStack {
                 if(uploadFromPhotos && !viewModel.images.isEmpty){
                     
@@ -107,6 +121,11 @@ struct EOBUploadView: View {
                             viewModel.submitPhotos(type: "photos")
                         } label: {
                             Text("Submit")
+                                .fontWeight(.semibold)
+                                .foregroundColor(.white)
+                                .frame(width: 300, height: 50)
+                                .background(Color.companyButton1)
+                                .cornerRadius(5)
                         }
                     }
                     Spacer()
@@ -154,7 +173,7 @@ struct EOBUploadView: View {
                     }
                     }
             }
-            
+            Spacer()
             
             
         }

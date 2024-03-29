@@ -26,7 +26,6 @@ struct WideCustomRow: View {
                 Spacer()
             }
         }
-
     }
 }
 

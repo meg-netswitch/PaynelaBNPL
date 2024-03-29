@@ -8,9 +8,11 @@
 import Foundation
 
 struct Communication {
+    var id: Int
     var communication_id: Int
     var date: String
     var subject: String
     var type: String
 
 }
+

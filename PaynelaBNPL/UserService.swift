@@ -122,6 +122,7 @@ class UserService {
     }
     
     func updateCareCenter(practice: String, address: String, city: String, state: String, zip: String, phone: String, email: String, completionHandler: @escaping (Bool, CareCenter?) -> Void){
+        completionHandler(true, currentCareCenter)
         
     }
     
@@ -131,7 +132,7 @@ class UserService {
     }
     
     func updateProvider(first_name: String, last_name: String, address: String, city: String, state: String, zip: String, completionHandler: @escaping (Bool, Provider?) -> Void){
-        
+        completionHandler(true, currentProvider)
     }
     
     
@@ -143,14 +144,31 @@ class UserService {
         }
     }
     
-    func registerNewUser(firstname: String, lastname: String, selectedDate: Date, ssn: String, completionHandler: @escaping (Bool) -> Void) {
+    func registerNewUser(firstname: String, lastname: String, selectedDate: String, ssn: String, completionHandler: @escaping (Bool) -> Void) {
         
         //call graphql mutation
         //return true/false
-       
+
+        completionHandler(true)
+        /*
         
+        Network.shared.apolloClient.fetch(query: RegisterPatientQuery(first_name: firstname, last_name: lastname, dob: selectedDate, ssn: ssn)) {
+            result in
+            switch result {
+            case .success (let graphQLResult):
+                DispatchQueue.main.async {
+                    if let response = graphQLResult.data?.registerpatient {
+                        
+                        completionHandler(true)
+                    }
+                }
+            case .failure(let error):
+                print ("error: \(error)")
+                //returning false shows error message
+                completionHandler(false)
+            }
+        }
+        */
     }
     
 }
-
-
