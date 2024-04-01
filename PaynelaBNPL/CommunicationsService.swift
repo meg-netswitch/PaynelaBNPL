@@ -15,9 +15,9 @@ class CommunicationsService {
         
         //get communications from data source
         let communicationData: [Communication] = [Communication(id: 1, communication_id: 1, date: "02/12/24", subject: "Welcome Message", type: "Email: smith@company.com"), Communication(id: 2, communication_id: 2, date: "02/12/24", subject: "Follow up Loan Approval", type: "Email: smith@company.com"), Communication(id: 3, communication_id: 3, date: "02/12/24", subject: "Enquiry of Payment Schedule", type: "Email: smith@company.com"), Communication(id: 4, communication_id: 4, date: "02/12/24", subject: "Important Membership Info", type: "Email: smith@company.com")]
+        //let communicationData: [Communication] = []
         
         self.communicationList = communicationData
-        
         completionHandler(true, communicationData)
         /*
         Network.shared.apolloClient.fetch(query: CommunicationFindQuery(patient_id: patient_id)) {

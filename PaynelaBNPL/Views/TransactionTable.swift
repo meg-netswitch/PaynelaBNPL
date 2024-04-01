@@ -13,41 +13,49 @@ struct TransactionTable: View {
     
     var body: some View {
                 if(viewModel.transactionModel.transactionList != nil){
-                    List(viewModel.transactionModel.transactionList!, id: \.transaction_id) { item in
-                        NavigationLink {
-                            TransactionDetailsView(transactionDetail: item)
-                        } label: {
-                            HStack {
-                                HStack{
-                                    Text(item.date)
-                                        .foregroundStyle(Color.black)
+                    if(viewModel.transactionModel.transactionList!.count > 0){
+                        List(viewModel.transactionModel.transactionList!, id: \.transaction_id) { item in
+                            NavigationLink {
+                                TransactionDetailsView(transactionDetail: item)
+                            } label: {
+                                HStack {
+                                    HStack{
+                                        Text(item.date)
+                                            .foregroundStyle(Color.black)
+                                        Spacer()
+                                    }
+                                    .frame(width: 80)
+                                    HStack{
+                                        Text("$\(item.amount)")
+                                        Spacer()
+                                    }
+                                    .frame(width: 80)
+                                    HStack{
+                                        Text(item.status)
+                                        //Spacer()
+                                    }
+                                    .frame(width: 80)
+                                    HStack{
+                                        Text("$\(item.balance)")
+                                    }
+                                    .frame(width: 80)
                                     Spacer()
                                 }
-                                .frame(width: 80)
-                                HStack{
-                                    Text("$\(item.amount)")
-                                    Spacer()
-                                }
-                                .frame(width: 80)
-                                HStack{
-                                    Text(item.status)
-                                    //Spacer()
-                                }
-                                .frame(width: 80)
-                                HStack{
-                                    Text("$\(item.balance)")
-                                }
-                                .frame(width: 80)
-                                Spacer()
+                                
+                    
                             }
-                            
-                            
+                            .padding(.vertical)
+                            .listRowBackground(item.id % 2 == 0 ? Color.white : Color.lightGray)
                         }
-                        .padding(.vertical)
-                        .listRowBackground(item.id % 2 == 0 ? Color.white : Color.lightGray)
+                        .listStyle(.inset)
+                    } else {
+                        Text("no results")
+                            .padding(.vertical, 30)
+                        Spacer()
                     }
-                    .listStyle(.inset)
                 } else {
+                    ProgressView()
+                        .padding()
                     Spacer()
                 }
         
