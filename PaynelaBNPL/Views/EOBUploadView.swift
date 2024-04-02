@@ -24,7 +24,7 @@ struct EOBUploadView: View {
                 PageHeading(title: "Upload EOB")
                 Spacer()
             }
-            if(!uploadFromPhotos && !uploadFromCamera){
+            if((!uploadFromPhotos && !uploadFromCamera) || (uploadFromCamera && viewModel.cameraImages.count == 0)){
                 VStack {
                     Text("Select")
                         .fontWeight(.semibold)
@@ -180,7 +180,6 @@ struct EOBUploadView: View {
             
         }
         .sheet(isPresented: $showCameraSheet) {
-            
             ImagePicker(selectedImage: $viewModel.cameraImages, sourceType: .camera)
                 .ignoresSafeArea()
         }
@@ -215,7 +214,15 @@ struct EOBUploadView: View {
                 )
             )
         }
-
+        
+        .onChange(of: viewModel.uploadComplete){
+            print("finished")
+            uploadFromPhotos = false
+            uploadFromCamera = false
+            viewModel.cancelUpload()
+            presentationMode.wrappedValue.dismiss()
+            
+        }
     }
     
 }

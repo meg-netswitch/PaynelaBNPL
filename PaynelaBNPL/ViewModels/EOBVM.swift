@@ -21,6 +21,7 @@ class EOBVM: ObservableObject {
     @Published var cameraIndex = 0
     @Published var submissionLoading = false
     @Published var connectionErr = false
+    @Published var uploadComplete = false
     
     @Published var images: [UIImage] = []
     @Published var selectedItems: [PhotosPickerItem] = []
@@ -43,6 +44,7 @@ class EOBVM: ObservableObject {
         cameraImages.removeAll()
         images.removeAll()
         selectedItems.removeAll()
+        self.uploadComplete = false
         submissionLoading = false
     }
     
@@ -110,7 +112,7 @@ class EOBVM: ObservableObject {
                                         print("success")
                                         submissionLoading = false
                                         cancelUpload()
-                                        
+                                        self.uploadComplete = true
                                     } else {
                                         print("error pdf upload")
                                     }

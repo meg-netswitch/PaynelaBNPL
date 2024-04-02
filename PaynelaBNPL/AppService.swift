@@ -11,7 +11,7 @@ class AppService {
     static let shared = AppService()
     
     let companyName: String = "Paynela"
-    let companySlogan: String = "Universal Card"
+    let companySlogan: String = "Buy Now Pay Later"
     let backgroundLight: Bool = false
     let backLink = "paynelabnpl://login"
     let cardID = "py0008"
