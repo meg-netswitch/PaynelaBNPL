@@ -49,7 +49,7 @@ class UserService {
                 DispatchQueue.main.async {
                    
                     if let response = graphQLResult.data?.userlogin {
-                        print(response)
+                    
                         let currentUser = User(user_id: response.user_id, username: response.username ?? "", email: response.email ?? "", user_role: response.user_role ?? "", user_status: response.user_status ?? "", password: response.password ?? "", created_dt: response.created_dt ?? "", last_login: response.last_login ?? "")
                         self.currentUser = currentUser
                         self.currentUserID = response.user_id

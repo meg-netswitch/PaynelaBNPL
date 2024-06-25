@@ -19,6 +19,15 @@ query Userlogin($username: String!, $password: String!) {
     }
 }
 
+query CognitoUserlogin($username: String!, $password: String!) {
+    cognitoUserLogin(username: $username, password: $password) {
+        valid
+        access_token
+        username
+        message
+    }
+}
+
  query PatientFind($patient_id: Int!) {
  patientfind(patient_id: $patient_id) {
    patient_id

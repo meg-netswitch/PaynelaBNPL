@@ -25,6 +25,7 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "Query": return GraphQLSchema.Objects.Query
     case "Provider": return GraphQLSchema.Objects.Provider
     case "User": return GraphQLSchema.Objects.User
+    case "CognitoAccess": return GraphQLSchema.Objects.CognitoAccess
     case "Patient": return GraphQLSchema.Objects.Patient
     case "PatientName": return GraphQLSchema.Objects.PatientName
     case "Address": return GraphQLSchema.Objects.Address
