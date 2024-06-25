@@ -102,14 +102,14 @@ public class PatientFindQuery: GraphQLQuery {
         public static var __parentType: ApolloAPI.ParentType { GraphQLSchema.Objects.PatientName }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
-          .field("first", String.self),
-          .field("middle", String.self),
-          .field("last", String.self),
+          .field("first", String?.self),
+          .field("middle", String?.self),
+          .field("last", String?.self),
         ] }
 
-        public var first: String { __data["first"] }
-        public var middle: String { __data["middle"] }
-        public var last: String { __data["last"] }
+        public var first: String? { __data["first"] }
+        public var middle: String? { __data["middle"] }
+        public var last: String? { __data["last"] }
       }
 
       /// Patientfind.Address
@@ -122,18 +122,18 @@ public class PatientFindQuery: GraphQLQuery {
         public static var __parentType: ApolloAPI.ParentType { GraphQLSchema.Objects.Address }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
-          .field("address_1", String.self),
-          .field("address_2", String.self),
-          .field("city", String.self),
-          .field("state", String.self),
-          .field("zip", String.self),
+          .field("address_1", String?.self),
+          .field("address_2", String?.self),
+          .field("city", String?.self),
+          .field("state", String?.self),
+          .field("zip", String?.self),
         ] }
 
-        public var address_1: String { __data["address_1"] }
-        public var address_2: String { __data["address_2"] }
-        public var city: String { __data["city"] }
-        public var state: String { __data["state"] }
-        public var zip: String { __data["zip"] }
+        public var address_1: String? { __data["address_1"] }
+        public var address_2: String? { __data["address_2"] }
+        public var city: String? { __data["city"] }
+        public var state: String? { __data["state"] }
+        public var zip: String? { __data["zip"] }
       }
 
       /// Patientfind.Phone
@@ -146,16 +146,16 @@ public class PatientFindQuery: GraphQLQuery {
         public static var __parentType: ApolloAPI.ParentType { GraphQLSchema.Objects.Phone }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
-          .field("fax", String.self),
-          .field("home", String.self),
-          .field("mobile", String.self),
-          .field("work", String.self),
+          .field("fax", String?.self),
+          .field("home", String?.self),
+          .field("mobile", String?.self),
+          .field("work", String?.self),
         ] }
 
-        public var fax: String { __data["fax"] }
-        public var home: String { __data["home"] }
-        public var mobile: String { __data["mobile"] }
-        public var work: String { __data["work"] }
+        public var fax: String? { __data["fax"] }
+        public var home: String? { __data["home"] }
+        public var mobile: String? { __data["mobile"] }
+        public var work: String? { __data["work"] }
       }
 
       /// Patientfind.Opt_in
@@ -168,16 +168,16 @@ public class PatientFindQuery: GraphQLQuery {
         public static var __parentType: ApolloAPI.ParentType { GraphQLSchema.Objects.OptIn }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
-          .field("agreed_timesheet", String.self),
-          .field("optin_data", String.self),
-          .field("optin_type", String.self),
-          .field("product_id", String.self),
+          .field("agreed_timesheet", String?.self),
+          .field("optin_data", String?.self),
+          .field("optin_type", String?.self),
+          .field("product_id", String?.self),
         ] }
 
-        public var agreed_timesheet: String { __data["agreed_timesheet"] }
-        public var optin_data: String { __data["optin_data"] }
-        public var optin_type: String { __data["optin_type"] }
-        public var product_id: String { __data["product_id"] }
+        public var agreed_timesheet: String? { __data["agreed_timesheet"] }
+        public var optin_data: String? { __data["optin_data"] }
+        public var optin_type: String? { __data["optin_type"] }
+        public var product_id: String? { __data["product_id"] }
       }
 
       /// Patientfind.Insurance
@@ -190,12 +190,12 @@ public class PatientFindQuery: GraphQLQuery {
         public static var __parentType: ApolloAPI.ParentType { GraphQLSchema.Objects.Insurance }
         public static var __selections: [ApolloAPI.Selection] { [
           .field("__typename", String.self),
-          .field("medical", Medical.self),
-          .field("rx", Rx.self),
+          .field("medical", Medical?.self),
+          .field("rx", Rx?.self),
         ] }
 
-        public var medical: Medical { __data["medical"] }
-        public var rx: Rx { __data["rx"] }
+        public var medical: Medical? { __data["medical"] }
+        public var rx: Rx? { __data["rx"] }
 
         /// Patientfind.Insurance.Medical
         ///
@@ -207,22 +207,22 @@ public class PatientFindQuery: GraphQLQuery {
           public static var __parentType: ApolloAPI.ParentType { GraphQLSchema.Objects.Medical }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
-            .field("bin", String.self),
-            .field("effective_date", String.self),
-            .field("group_number", String.self),
-            .field("member_number", String.self),
-            .field("name", String.self),
-            .field("pcn", String.self),
-            .field("plan_type", String.self),
+            .field("bin", String?.self),
+            .field("effective_date", String?.self),
+            .field("group_number", String?.self),
+            .field("member_number", String?.self),
+            .field("name", String?.self),
+            .field("pcn", String?.self),
+            .field("plan_type", String?.self),
           ] }
 
-          public var bin: String { __data["bin"] }
-          public var effective_date: String { __data["effective_date"] }
-          public var group_number: String { __data["group_number"] }
-          public var member_number: String { __data["member_number"] }
-          public var name: String { __data["name"] }
-          public var pcn: String { __data["pcn"] }
-          public var plan_type: String { __data["plan_type"] }
+          public var bin: String? { __data["bin"] }
+          public var effective_date: String? { __data["effective_date"] }
+          public var group_number: String? { __data["group_number"] }
+          public var member_number: String? { __data["member_number"] }
+          public var name: String? { __data["name"] }
+          public var pcn: String? { __data["pcn"] }
+          public var plan_type: String? { __data["plan_type"] }
         }
 
         /// Patientfind.Insurance.Rx
@@ -235,22 +235,22 @@ public class PatientFindQuery: GraphQLQuery {
           public static var __parentType: ApolloAPI.ParentType { GraphQLSchema.Objects.Rx }
           public static var __selections: [ApolloAPI.Selection] { [
             .field("__typename", String.self),
-            .field("bin", String.self),
-            .field("effective_date", String.self),
-            .field("group_number", String.self),
-            .field("member_number", String.self),
-            .field("name", String.self),
-            .field("pcn", String.self),
-            .field("plan_type", String.self),
+            .field("bin", String?.self),
+            .field("effective_date", String?.self),
+            .field("group_number", String?.self),
+            .field("member_number", String?.self),
+            .field("name", String?.self),
+            .field("pcn", String?.self),
+            .field("plan_type", String?.self),
           ] }
 
-          public var bin: String { __data["bin"] }
-          public var effective_date: String { __data["effective_date"] }
-          public var group_number: String { __data["group_number"] }
-          public var member_number: String { __data["member_number"] }
-          public var name: String { __data["name"] }
-          public var pcn: String { __data["pcn"] }
-          public var plan_type: String { __data["plan_type"] }
+          public var bin: String? { __data["bin"] }
+          public var effective_date: String? { __data["effective_date"] }
+          public var group_number: String? { __data["group_number"] }
+          public var member_number: String? { __data["member_number"] }
+          public var name: String? { __data["name"] }
+          public var pcn: String? { __data["pcn"] }
+          public var plan_type: String? { __data["plan_type"] }
         }
       }
     }

@@ -54,6 +54,7 @@ class LoginVM: ObservableObject {
     
     func loginWithoutUpdatingKeychain(){
         userModel.validateUser(username: username, withPassword: password) { result in
+            print(result)
             if result {
                 self.validLogin = true
                 self.username = ""

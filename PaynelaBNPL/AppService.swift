@@ -17,7 +17,7 @@ class AppService {
     let cardID = "py0008"
     let accessCode = "123"
     let graphqlURL = "https://h4d3rx75vfejtmgih2bnp6ewya.appsync-api.us-east-2.amazonaws.com/graphql"
-    let graphql_xapikey = "da2-dygs23ujtfer7f276227o6vrxi"
+    let graphql_xapikey = "da2-xs7ywkferjfl3geijpdxzuuguu"
     let uploadEOBURL = "https://awttq5f0g5.execute-api.us-east-2.amazonaws.com/v1/"
     let uploadEOB_xapikey = "S9oITeHHGe88Lnfzwzant8JUIrKir4vNaNzv2JcD"
     

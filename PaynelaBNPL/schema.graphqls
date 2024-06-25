@@ -3,20 +3,125 @@ schema {
   mutation: Mutation
 }
 
-type Address {
-  address_1: String!
-  address_2: String!
-  city: String!
-  state: String!
-  zip: String!
+type Address   {
+  address_1: String
+  address_2: String
+  city: String
+  state: String
+  zip: String
 }
 
-type Company {
+type CognitoAccess    {
+  access_token: String
+  message: String
+  username: String
+  valid: Boolean
+}
+
+type Company   {
   company_id: Int!
   company_name: String!
 }
 
-type Document {
+type Document   {
+  created_dt: String
+  document_id: Int!
+  document_status: String
+  document_template_id: Int
+  filename: String
+  modified_dt: String
+  patient_id: Int
+  patient_product_id: Int
+  received_dt: String
+  sent_dt: String
+  signature_data: String
+}
+
+type EligibilityQuestion   {
+  company_id: Int
+  company_name: String
+  correct_response: String
+  description: String
+  end_date: String
+  product_description: String
+  product_id: Int
+  product_name: String
+  question_id: Int
+  question_number: Int
+  question_set_id: Int
+  question_sort: Int
+  question_text: String
+  response_type: String
+  start_date: String
+}
+
+type EligibilitySet   {
+  description: String
+  end_date: String
+  product_id: Int
+  product_name: String
+  question_set_id: Int
+  start_date: String
+}
+
+type Enrollment  {
+  bin: String
+  group_number: String
+  message: String
+  patient_id: Int
+  patient_name: PatientName
+  patient_product_id: Int
+  patient_status: String
+  pcn: String
+  product: String
+  product_id: Int
+}
+
+type Insurance   {
+  medical: Medical
+  rx: Rx
+}
+
+type Insurance2   {
+  medical: Medical2
+  rx: Rx2
+}
+
+type LoanPayment   {
+  amount_collected: String
+  amount_due: String
+  collected_date: String
+  created_dt: String
+  due_date: String
+  modified_dt: String
+  patient_loan_id: Int
+  payment_status: String
+  period_number: Int
+  running_balance: String
+  transaction_id: Int
+}
+
+type Medical   {
+  bin: String
+  effective_date: String
+  group_number: String
+  member_number: String
+  name: String
+  pcn: String
+  plan_type: String
+}
+
+type Medical2   {
+  bin: String
+  company_name: String
+  effective_date: String
+  group_number: String
+  member_number: String
+  pcn: String
+  plan_type: String
+}
+
+type MockDocument  {
   assign_to: String!
   attached_to: String!
   document_id: Int!
@@ -35,33 +140,26 @@ type Document {
   source: String!
 }
 
-type Insurance {
-  medical: Medical!
-  rx: Rx!
-}
-
-type Medical {
-  bin: String!
-  effective_date: String!
-  group_number: String!
-  member_number: String!
-  name: String!
-  pcn: String!
-  plan_type: String!
-}
-
 type Mutation {
-  updatePatient(patient_id: Int!): Patient
+  addpatientproduct(patient_id: Int!, patient_product_status: String!, procurement_provider_id: Int!, product_id: Int!, start_date: String!): PatientProduct2
+  createPatient(address_1: String!, address_2: String!, city: String!, consent_reason: String, dob: String!, email: String!, enroll_phase: String!, enrolled_by: String!, first_name: String!, gender: String!, home_phone: String!, kyc_id: String!, last_name: String!, medical_insurance: String!, opt_in: String!, patient_status: String!, rx_insurance: String!, ssn: String!, state: String!, user_id: Int!, work_phone: String!, zip: String!): Patient2
+  createProvider(address_1: String!, address_2: String, city: String!, email: String!, first_name: String!, home_phone: String, last_name: String!, npi: String!, practice_name: String!, provider_type: String!, state: String!, user_id: Int!, work_phone: String, zip: String!): Provider
+  createUser(email: String!, password: String!, user_role: String!, username: String!): User2
+  createloan(loan_amount: Float!, patient_product_id: Int!, payment_amount: Float!, payment_periods: Int!, product_id: Int!, repayment_card_id: Int!, start_date: String!, used_amount: Float!): PatientLoan 
+  patientenrollment(enrollment_data: String): Enrollment
+  updatePatient(address_1: String!, address_2: String!, city: String!, consent_reason: String, dob: String!, email: String!, enroll_phase: String!, enrolled_by: String!, first_name: String!, gender: String!, home_phone: String!, kyc_id: String!, last_name: String!, medical_insurance: String!, opt_in: String!, patient_id: Int!, patient_status: String!, rx_insurance: String!, ssn: String!, state: String!, user_id: Int!, work_phone: String!, zip: String!): Patient2
+  updateProvider(address_1: String!, address_2: String, city: String!, email: String!, first_name: String!, home_phone: String, last_name: String!, npi: String!, practice_name: String!, provider_id: Int!, provider_type: String!, state: String!, work_phone: String, zip: String!): Provider
+  updateUser(email: String!, password: String!, user_id: Int!, user_role: String!, username: String!): User2
 }
 
-type OptIn {
-  agreed_timesheet: String!
-  optin_data: String!
-  optin_type: String!
-  product_id: String!
+type OptIn   {
+  agreed_timesheet: String
+  optin_data: String
+  optin_type: String
+  product_id: String
 }
 
-type Patient {
+type Patient  {
   address: Address!
   consent_reason: String!
   created_by_user_id: String!
@@ -89,114 +187,287 @@ type Patient {
   status: String!
 }
 
-type PatientInsurance {
-  bin_number: String!
-  effective_date: String!
-  end_date: String!
-  group_number: String!
-  insurance_company_name: String!
-  insurance_type: String!
-  member_number: String!
-  patient_id: Int!
-  patient_insurance_id: Int!
-  pcn_number: String!
-  plan_type: String!
+type Patient2  {
+  address: Address
+  consent_reason: String
+  created_by_user_id: String
+  created_dt: String
+  dob: String
+  email: String
+  enroll_dt: String
+  enroll_phase: String
+  enrolled_by: String
+  gender: String
+  insurance: Insurance
+  kyc_id: String
+  loan_amount: String
+  member_id: String
+  modified_by_user_id: String
+  modified_dt: String
+  name_suffix: String
+  name_title: String
+  opt_in: [OptIn]
+  patient_id: Int
+  patient_name: PatientName
+  patient_status: String
+  phone: Phone
+  ssn: String
+  status: String
 }
 
-type PatientName {
-  first: String!
-  last: String!
-  middle: String!
+type PatientExtended   {
+  address: Address
+  consent_reason: String
+  created_by_user_id: String
+  created_dt: String
+  dob: String
+  email: String
+  enroll_dt: String
+  enrolled_by: String
+  gender: String
+  insurance: Insurance2
+  kyc_id: String
+  member_id: String
+  modified_by_user_id: String
+  modified_dt: String
+  opt_in: String
+  patient_id: Int
+  patient_name: PatientName
+  patient_status: String
+  phone: Phone
+  product: [Product]
+  ssn: String
+  status: String
 }
 
-type PatientProduct {
+type PatientInsurance   {
+  bin_number: String
+  effective_date: String
+  end_date: String
+  group_number: String
+  insurance_company_name: String
+  insurance_type: String
+  member_number: String
+  patient_id: Int
+  patient_insurance_id: Int
+  pcn_number: String
+  plan_type: String
+}
+
+type PatientLoan   {
+  created_dt: String
+  loan_amount: Float
+  message: String
+  modified_dt: String
+  patient_loan_id: Int
+  patient_product_id: Int
+  payment_amount: Float
+  payment_periods: Int
+  product_rule_id: Int
+  repayment_card_id: Int
+  start_date: String
+  used_amount: Float
+}
+
+type PatientName   {
+  first: String
+  last: String
+  middle: String
+}
+
+type PatientProduct  {
   patient_id: Int!
   patient_product_id: Int!
   patient_product_status: String!
   product_id: Int!
 }
 
-type PatientProductProvider {
+type PatientProduct2  {
+  created_dt: String
+  end_date: String
+  modified_dt: String
+  patient_id: Int
+  patient_product_id: Int
+  patient_product_status: String
+  procurement_provider_id: Int
+  product_id: Int
+  start_date: String
+}
+
+type PatientProductProvider  {
   created_dt: String!
   patient_product_id: Int!
   provider_id: Int!
   provider_link_type: String!
 }
 
-type Phone {
-  fax: String!
-  home: String!
-  mobile: String!
-  work: String!
+type Phone   {
+  fax: String
+  home: String
+  mobile: String
+  work: String
 }
 
 type Product {
-  avg_price: String!
-  company_id: Int!
-  end_date: String!
-  product_description: String!
+  avg_price: String
+  company_id: Int
+  end_date: String
+  loan: PatientLoan
+  patient_product_id: Int
+  procurement: ProviderExtended
+  product_description: String
   product_id: Int!
-  product_name: String!
-  start_date: String!
+  product_name: String
+  provider: ProviderExtended
+  start_date: String
 }
 
-type Provider {
-  address: Address!
-  created_dt: String!
-  email: String!
-  enroll_dt: String!
-  first_name: String!
-  last_name: String!
-  middle_name: String!
-  modified_dt: String!
-  name_suffix: String!
-  name_title: String!
-  npi: String!
-  num_patients: String!
-  phone: Phone!
-  practice_name: String!
-  provider_id: Int!
-  provider_type: String!
-  status: String!
+type Provider   {
+  address: Address
+  created_dt: String
+  email: String
+  enroll_dt: String
+  first_name: String
+  last_name: String
+  middle_name: String
+  modified_dt: String
+  name_suffix: String
+  name_title: String
+  npi: String
+  num_patients: String
+  phone: Phone
+  practice_name: String
+  provider_id: Int
+  provider_type: String
+  status: String
+}
+
+type Provider2  {
+  address: Address
+  created_dt: String
+  email: String
+  enroll_dt: String
+  modified_dt: String
+  name_suffix: String
+  name_title: String
+  npi: String
+  phone: Phone
+  practice_name: String
+  provider_id: Int
+  provider_name: ProviderName
+  provider_type: String
+}
+
+type ProviderExtended   {
+  address: Address
+  created_dt: String
+  email: String
+  npi: String
+  num_patients: Int
+  phone: Phone
+  practice_name: String
+  provider_id: Int
+  provider_name: ProviderName
+  status: String
+}
+
+type ProviderName   {
+  first: String
+  last: String
+  middle: String
+}
+
+type ProviderPatient  {
+  patient: PatientExtended
+  patient_product_id: Int
 }
 
 type Query {
   allpatients: [Patient]
   allproviders: [Provider]
-  companyfind(company_id: Int!): Company
-  documentfind(document_id: Int, document_type: String, patient_id: Int, patient_product_id: Int, phone_number: String, provider_name: String): [Document]
-  getpatients(provider_id: Int!): [Patient]
-  getproviders(product: String!): [Provider]
-  patientfind(patient_id: Int!): Patient
-  patientinsurancefind(patient_id: Int!): [PatientInsurance]
-  patientproductfind(patient_product_id: Int!): PatientProduct
-  patientproductproviderfind(patient_product_id: Int!): PatientProductProvider
-  patientproductsearch(patient_id: Int, product_id: Int): [PatientProduct]
-  productfind(product_id: Int!): Product
-  productfindbycompany(company_id: Int!): [Product]
-  providerfind(provider_id: Int!): Provider
-  userlogin(password: String!, username: String!): User
+  cognitoUserLogin(password: String!, username: String!): CognitoAccess   
+  cognitologin(authentication_id: String): User  
+  companyfind(company_id: Int!): Company  
+  documentfind(document_id: Int, document_type: String, patient_id: Int, patient_product_id: Int, phone_number: String, provider_name: String): [MockDocument]  
+  documentfindext(document_id: Int, document_template_id: Int, patient_id: Int, phone: String, product_id: Int, provider_name: String): [Document]  
+  eligibilityquestions(eligibility_set_id: Int!): [EligibilityQuestion]  
+  eligibilityset(product_id: Int!): EligibilitySet  
+  geteligibilityquestions(product_id: Int!): [EligibilityQuestion]  
+  getpatients(provider_id: Int!): [Patient] 
+  getpatientsbyprovider(provider_id: Int!): [Patient2]  
+  getprocurement(patient_id: Int!, product_id: Int!): ProviderExtended  
+  getproducts: [Product]  
+  getproviders(product: String!): [Provider]  
+  listpatients: [Patient2]  
+  listproviders: [Provider]
+  login(password: String!, username: String!): User2  
+  patientdetailsext(patient_id: Int!, product_id: Int): PatientExtended  
+  patientfind(patient_id: Int!): Patient 
+  patientfind2(patient_id: Int!): Patient2  
+  patientfindext(dob: String, first_name: String, last_name: String, middle_name: String, product_id: Int): [PatientExtended]  
+  patientinsurancefind(patient_id: Int!): [PatientInsurance]  
+  patientloanpayments(patient_id: Int!, product_id: Int!): [LoanPayment]  
+  patientproductfind(patient_product_id: Int!): PatientProduct  
+  patientproductproviderfind(patient_product_id: Int!): PatientProductProvider  
+  patientproductsearch(patient_id: Int, product_id: Int): [PatientProduct]  
+  productfind(product_id: Int!): Product  
+  productfindbycompany(company_id: Int!): [Product]  
+  providerfind(provider_id: Int!): Provider 
+  providerfind2(provider_id: Int!): ProviderExtended  
+  providerfindext(last_name: String, npi: String, product: String, state: String): [ProviderExtended]  
+  providerpatients(provider_id: Int!): [ProviderPatient]  
+  providersearch(npi: String, practice_name: String): [Provider]  
+  searchforprovider(last_name: String!, npi: String!, state: String!): [Provider2]  
+  searchprovider(practice_name: String!): [Provider2]  
+  testlambda(value: String!): TestResp
+  userlogin(password: String!, username: String!): User 
 }
 
-type Rx {
-  bin: String!
-  effective_date: String!
-  group_number: String!
-  member_number: String!
-  name: String!
-  pcn: String!
-  plan_type: String!
+type Rx   {
+  bin: String
+  effective_date: String
+  group_number: String
+  member_number: String
+  name: String
+  pcn: String
+  plan_type: String
 }
 
-type User {
-  created_dt: String!
-  email: String!
-  last_login: String!
-  password: String!
+type Rx2  {
+  bin: String
+  company_name: String
+  effective_date: String
+  group_number: String
+  member_number: String
+  pcn: String
+  plan_type: String
+}
+
+type TestResp {
+  response: String
+  statusCode: Int
+}
+
+type User   {
+  authentication_id: String
+  created_dt: String
+  email: String
+  last_login: String
+  password: String
   user_id: Int!
-  user_role: String!
-  user_status: String!
-  username: String!
+  user_role: String
+  user_status: String
+  username: String
 }
 
-
+type User2  {
+  created_dt: String
+  email: String
+  last_login: String
+  message: String
+  result: Int!
+  user_id: Int
+  user_role: String
+  user_status: String
+  username: String
+}

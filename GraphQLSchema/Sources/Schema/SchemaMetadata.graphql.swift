@@ -33,7 +33,7 @@ public enum SchemaMetadata: ApolloAPI.SchemaMetadata {
     case "Insurance": return GraphQLSchema.Objects.Insurance
     case "Medical": return GraphQLSchema.Objects.Medical
     case "Rx": return GraphQLSchema.Objects.Rx
-    case "Document": return GraphQLSchema.Objects.Document
+    case "MockDocument": return GraphQLSchema.Objects.MockDocument
     default: return nil
     }
   }

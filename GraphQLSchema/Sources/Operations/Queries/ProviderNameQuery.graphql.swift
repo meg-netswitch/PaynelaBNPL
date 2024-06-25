@@ -33,14 +33,14 @@ public class ProviderNameQuery: GraphQLQuery {
       public static var __parentType: ApolloAPI.ParentType { GraphQLSchema.Objects.Provider }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
-        .field("provider_type", String.self),
-        .field("first_name", String.self),
-        .field("last_name", String.self),
+        .field("provider_type", String?.self),
+        .field("first_name", String?.self),
+        .field("last_name", String?.self),
       ] }
 
-      public var provider_type: String { __data["provider_type"] }
-      public var first_name: String { __data["first_name"] }
-      public var last_name: String { __data["last_name"] }
+      public var provider_type: String? { __data["provider_type"] }
+      public var first_name: String? { __data["first_name"] }
+      public var last_name: String? { __data["last_name"] }
     }
   }
 }

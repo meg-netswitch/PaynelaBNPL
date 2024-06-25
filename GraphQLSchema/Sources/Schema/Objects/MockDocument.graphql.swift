@@ -4,8 +4,8 @@
 import ApolloAPI
 
 public extension Objects {
-  static let Document = ApolloAPI.Object(
-    typename: "Document",
+  static let MockDocument = ApolloAPI.Object(
+    typename: "MockDocument",
     implementedInterfaces: []
   )
 }

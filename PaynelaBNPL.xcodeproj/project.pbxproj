@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C03A7022C2B5B68005EF35C /* GraphQLSchema in Resources */ = {isa = PBXBuildFile; fileRef = 0C03A7012C2B5B68005EF35C /* GraphQLSchema */; };
+		0C03A7042C2B5B8F005EF35C /* GraphQLSchema in Frameworks */ = {isa = PBXBuildFile; productRef = 0C03A7032C2B5B8F005EF35C /* GraphQLSchema */; };
+		0C35A6812BBDA45700F838CE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C35A6802BBDA45700F838CE /* ContentView.swift */; };
+		0C35A6832BBDA47B00F838CE /* LocationManagerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C35A6822BBDA47B00F838CE /* LocationManagerViewModel.swift */; };
 		0C4CA7252BA0E94A0082F8E5 /* PaynelaBNPL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C4CA7242BA0E94A0082F8E5 /* PaynelaBNPL.swift */; };
 		0C4CA7292BA0E94B0082F8E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C4CA7282BA0E94B0082F8E5 /* Assets.xcassets */; };
 		0C4CA72C2BA0E94B0082F8E5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C4CA72B2BA0E94B0082F8E5 /* Preview Assets.xcassets */; };
@@ -54,8 +58,8 @@
 		0CA797052BB3321A0045B1F2 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 0CA797042BB3321A0045B1F2 /* Apollo */; };
 		0CA797082BB3326B0045B1F2 /* schema.graphqls in Resources */ = {isa = PBXBuildFile; fileRef = 0CA797062BB3326B0045B1F2 /* schema.graphqls */; };
 		0CA797092BB3326B0045B1F2 /* Queries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 0CA797072BB3326B0045B1F2 /* Queries.graphql */; };
-		0CA797142BB3340B0045B1F2 /* GraphQLSchema in Resources */ = {isa = PBXBuildFile; fileRef = 0CA797132BB3340B0045B1F2 /* GraphQLSchema */; };
-		0CA797172BB3345B0045B1F2 /* GraphQLSchema in Frameworks */ = {isa = PBXBuildFile; productRef = 0CA797162BB3345B0045B1F2 /* GraphQLSchema */; };
+		0CE07A802BBDC3F100A9FA03 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE07A7F2BBDC3F100A9FA03 /* NotificationService.swift */; };
+		0CE07A822BBEF7E200A9FA03 /* ContentVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE07A812BBEF7E200A9FA03 /* ContentVM.swift */; };
 		6A2E03B22BA4C56800E26AB0 /* TransactionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E03B12BA4C56800E26AB0 /* TransactionVM.swift */; };
 		6A2E03B42BA4C5C400E26AB0 /* CommunicationsVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E03B32BA4C5C400E26AB0 /* CommunicationsVM.swift */; };
 		6A2E03B62BA4C81D00E26AB0 /* EOBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E03B52BA4C81D00E26AB0 /* EOBService.swift */; };
@@ -95,6 +99,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0C03A7012C2B5B68005EF35C /* GraphQLSchema */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = GraphQLSchema; sourceTree = "<group>"; };
+		0C35A6802BBDA45700F838CE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0C35A6822BBDA47B00F838CE /* LocationManagerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerViewModel.swift; sourceTree = "<group>"; };
 		0C4CA7212BA0E94A0082F8E5 /* PaynelaBNPL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaynelaBNPL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C4CA7242BA0E94A0082F8E5 /* PaynelaBNPL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaynelaBNPL.swift; sourceTree = "<group>"; };
 		0C4CA7282BA0E94B0082F8E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -145,7 +152,8 @@
 		0CA797012BB331F30045B1F2 /* Apollo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apollo.swift; sourceTree = "<group>"; };
 		0CA797062BB3326B0045B1F2 /* schema.graphqls */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = schema.graphqls; sourceTree = "<group>"; };
 		0CA797072BB3326B0045B1F2 /* Queries.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Queries.graphql; sourceTree = "<group>"; };
-		0CA797132BB3340B0045B1F2 /* GraphQLSchema */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = GraphQLSchema; sourceTree = "<group>"; };
+		0CE07A7F2BBDC3F100A9FA03 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		0CE07A812BBEF7E200A9FA03 /* ContentVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentVM.swift; sourceTree = "<group>"; };
 		6A2E03B12BA4C56800E26AB0 /* TransactionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionVM.swift; sourceTree = "<group>"; };
 		6A2E03B32BA4C5C400E26AB0 /* CommunicationsVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationsVM.swift; sourceTree = "<group>"; };
 		6A2E03B52BA4C81D00E26AB0 /* EOBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EOBService.swift; sourceTree = "<group>"; };
@@ -173,7 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CA797052BB3321A0045B1F2 /* Apollo in Frameworks */,
-				0CA797172BB3345B0045B1F2 /* GraphQLSchema in Frameworks */,
+				0C03A7042C2B5B8F005EF35C /* GraphQLSchema in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +205,7 @@
 		0C4CA7182BA0E94A0082F8E5 = {
 			isa = PBXGroup;
 			children = (
-				0CA797132BB3340B0045B1F2 /* GraphQLSchema */,
+				0C03A7012C2B5B68005EF35C /* GraphQLSchema */,
 				0C4CA7232BA0E94A0082F8E5 /* PaynelaBNPL */,
 				0C4CA7342BA0E94B0082F8E5 /* PaynelaBNPLTests */,
 				0C4CA73E2BA0E94B0082F8E5 /* PaynelaBNPLUITests */,
@@ -236,6 +244,7 @@
 				6ACF896B2BAB29A300A079AC /* PassService.swift */,
 				6A2E03B52BA4C81D00E26AB0 /* EOBService.swift */,
 				0CA797012BB331F30045B1F2 /* Apollo.swift */,
+				0CE07A7F2BBDC3F100A9FA03 /* NotificationService.swift */,
 			);
 			path = PaynelaBNPL;
 			sourceTree = "<group>";
@@ -293,6 +302,7 @@
 				6AEEBE5C2BA743A70054ECDA /* UploadImageView.swift */,
 				6A74A4E62BAA314F00FA33BD /* EOBUploadView.swift */,
 				6A9F30212BAF2D4E00768D88 /* CardLoadedView.swift */,
+				0C35A6802BBDA45700F838CE /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -313,6 +323,8 @@
 				6A2E03B12BA4C56800E26AB0 /* TransactionVM.swift */,
 				6A2E03B32BA4C5C400E26AB0 /* CommunicationsVM.swift */,
 				6A2E03B92BA4C90800E26AB0 /* EOBVM.swift */,
+				0C35A6822BBDA47B00F838CE /* LocationManagerViewModel.swift */,
+				0CE07A812BBEF7E200A9FA03 /* ContentVM.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -352,7 +364,7 @@
 			name = PaynelaBNPL;
 			packageProductDependencies = (
 				0CA797042BB3321A0045B1F2 /* Apollo */,
-				0CA797162BB3345B0045B1F2 /* GraphQLSchema */,
+				0C03A7032C2B5B8F005EF35C /* GraphQLSchema */,
 			);
 			productName = TemplateApp;
 			productReference = 0C4CA7212BA0E94A0082F8E5 /* PaynelaBNPL.app */;
@@ -450,7 +462,7 @@
 				0CA797082BB3326B0045B1F2 /* schema.graphqls in Resources */,
 				0CA797092BB3326B0045B1F2 /* Queries.graphql in Resources */,
 				0C4CA7292BA0E94B0082F8E5 /* Assets.xcassets in Resources */,
-				0CA797142BB3340B0045B1F2 /* GraphQLSchema in Resources */,
+				0C03A7022C2B5B68005EF35C /* GraphQLSchema in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,7 +498,11 @@
 				6AAABA8C2BA2281300B5553F /* EOBTableView.swift in Sources */,
 				6A2E03B82BA4C85300E26AB0 /* EOBModel.swift in Sources */,
 				0C4CA7682BA0ED3A0082F8E5 /* HomeView.swift in Sources */,
+				0C35A6812BBDA45700F838CE /* ContentView.swift in Sources */,
 				0C4CA7702BA0EF770082F8E5 /* PageHeading.swift in Sources */,
+				0C35A6832BBDA47B00F838CE /* LocationManagerViewModel.swift in Sources */,
+				0CE07A822BBEF7E200A9FA03 /* ContentVM.swift in Sources */,
+				0CE07A802BBDC3F100A9FA03 /* NotificationService.swift in Sources */,
 				0C4CA7622BA0EC6A0082F8E5 /* LoggedOutHeader.swift in Sources */,
 				0C4CA75C2BA0EB4E0082F8E5 /* UserModel.swift in Sources */,
 				0C4CA7582BA0EA0E0082F8E5 /* KeychainManager.swift in Sources */,
@@ -702,11 +718,14 @@
 				INFOPLIST_FILE = PaynelaBNPL/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Paynela;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please Allow Access to Camera";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Access Location Always";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Access Location when in Use";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -738,11 +757,14 @@
 				INFOPLIST_FILE = PaynelaBNPL/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Paynela;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Please Allow Access to Camera";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Access Location Always";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Access Location when in Use";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -896,14 +918,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		0C03A7032C2B5B8F005EF35C /* GraphQLSchema */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = GraphQLSchema;
+		};
 		0CA797042BB3321A0045B1F2 /* Apollo */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0CA797032BB3321A0045B1F2 /* XCRemoteSwiftPackageReference "apollo-ios" */;
 			productName = Apollo;
-		};
-		0CA797162BB3345B0045B1F2 /* GraphQLSchema */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = GraphQLSchema;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

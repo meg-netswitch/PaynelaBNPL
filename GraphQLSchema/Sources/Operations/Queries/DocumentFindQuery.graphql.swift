@@ -31,12 +31,12 @@ public class DocumentFindQuery: GraphQLQuery {
 
     /// Documentfind
     ///
-    /// Parent Type: `Document`
+    /// Parent Type: `MockDocument`
     public struct Documentfind: GraphQLSchema.SelectionSet {
       public let __data: DataDict
       public init(_dataDict: DataDict) { __data = _dataDict }
 
-      public static var __parentType: ApolloAPI.ParentType { GraphQLSchema.Objects.Document }
+      public static var __parentType: ApolloAPI.ParentType { GraphQLSchema.Objects.MockDocument }
       public static var __selections: [ApolloAPI.Selection] { [
         .field("__typename", String.self),
         .field("assign_to", String.self),
